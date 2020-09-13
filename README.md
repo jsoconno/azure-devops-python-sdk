@@ -1,10 +1,47 @@
-# azure-devops-python-sdk
+# Azure DevOps SDK for Python
 This repo is documents all of python-sdk clients as well as their methods and attributes.  It was created to help those looking to get started with this development kit by providing more information about each client to a new user and real world examples to help you get started.
 
 For more information, check out the original repo here:
 https://github.com/microsoft/azure-devops-python-api
 
+# Getting Started
+## Installing the SDK
+Open the terminal and type the following command:
+
+`pip install azure-devops`
+
+## Authenticating with an Azure DevOps PAT Token
+To use the API, establish a connection using a personal access token and the URL to your Azure DevOps organization. Then get a client from the connection and make API calls.
+
+```
+from azure.devops.connection import Connection
+from msrest.authentication import BasicAuthentication
+import inspect
+
+# Fill in with your personal access token and org URL
+personal_access_token = 'your_pat'
+organization_url = 'your_org'
+
+# Create a connection to the org
+credentials = BasicAuthentication('', personal_access_token)
+connection = Connection(base_url=organization_url, creds=credentials)
+```
+
 # Client Details
+Use the details below to connect to a client.  Examples for each client can be found in the sections below, but a basic example might look like this:
+
+```
+# Get the Git client
+git_client = connection.clients.get_git_client()
+
+# Get all repositories with the get_repositories() method
+repos = git_client.get_repositories()
+
+# Print all repository ids using the .id attribute
+for repo in repos:
+    print(repo.id)
+```
+
 ## Get Accounts Client
 ### GetAccounts
 #### Description:
