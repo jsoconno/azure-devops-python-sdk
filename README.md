@@ -4,6 +4,35 @@ This repo is documents all of python-sdk clients as well as their methods and at
 For more information, check out the original repo here:
 https://github.com/microsoft/azure-devops-python-api
 
+# Table of Contents
+* [Getting Started](#getting-started)
+  * [Installing the SDK](#installing)
+  * [Authenticating with an Azure DevOps PAT Token](#authenticating)
+  * [Using a Client](#using)
+* [Clients](#clients)
+  * [Get Accounts Client](#get-accounts)
+  * [Get Build Client](#get-build)
+  * [Get Cloud Load Test Client](#get-cloud-load-test)
+  * [Get Core Client](#get-core)
+  * [Get Git Client](#get-git)
+  * [Get Identity Client](#get-identity)
+  * [Get Notification Client](#get-notification)
+  * [Get Operations Client](#get-operations)
+  * [Get Policy Client](#get-policy)
+  * [Get Profile Client](#get-profile)
+  * [Get Release Client](#get-release)
+  * [Get Security Client](#get-security)
+  * [Get Service Hooks Client](#get-service-hooks)
+  * [Get Task Agent Client](#get-task-agent)
+  * [Get Task Client](#get-task)
+  * [Get Test Client](#get-test)
+  * [Get Test Plan Client](#get-test-plan)
+  * [Get Test Results Client](#get-test-results)
+  * [Get Tfvc Client](#get-tfvc)
+  * [Get Wiki Client](#get-wiki)
+  * [Get Work Client](#get-work)
+  * [Get Work Item Tracking Client](#get-work-item-tracking)
+
 # Getting Started
 ## Installing the SDK
 Open the terminal and type the following command:
@@ -27,6 +56,7 @@ credentials = BasicAuthentication('', personal_access_token)
 connection = Connection(base_url=organization_url, creds=credentials)
 ```
 
+## Using a Client
 Now you can use this connection to connect with a client.  Here is a basic example:
 
 ```
@@ -43,8 +73,8 @@ for repo in repos:
 
 More examples can be found in this repository or at https://github.com/Microsoft/azure-devops-python-samples.
 
-# Connect to and Use Clients
-Use the details below to connect to a client.  Examples for each client method can be found in the sections below.
+# Clients
+Details on  each client can be found in this section.
 
 ## Get Accounts Client
 ### GetAccounts
