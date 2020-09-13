@@ -27,8 +27,7 @@ credentials = BasicAuthentication('', personal_access_token)
 connection = Connection(base_url=organization_url, creds=credentials)
 ```
 
-# Client Details
-Use the details below to connect to a client.  Examples for each client can be found in the sections below, but a basic example might look like this:
+Now you can use this connection to connect with a client.  Here is a basic example:
 
 ```
 # Get the Git client
@@ -41,6 +40,11 @@ repos = git_client.get_repositories()
 for repo in repos:
     print(repo.id)
 ```
+
+More examples can be found in this repository or at https://github.com/Microsoft/azure-devops-python-samples.
+
+# Connect to and Use Clients
+Use the details below to connect to a client.  Examples for each client method can be found in the sections below.
 
 ## Get Accounts Client
 ### GetAccounts
