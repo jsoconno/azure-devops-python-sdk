@@ -45,7 +45,6 @@ To use the API, establish a connection using a personal access token and the URL
 ```
 from azure.devops.connection import Connection
 from msrest.authentication import BasicAuthentication
-import inspect
 
 # Fill in with your personal access token and org URL
 personal_access_token = 'your_pat'
