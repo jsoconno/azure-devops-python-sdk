@@ -85,7 +85,7 @@ Get a list of accounts for a specific owner or a specific member.
 * `:param str properties:`
 #### Example usage:
 ```
-connection.clients.get_accounts_client().get_accounts(owner_id,member_id,properties)
+connection.clients.get_accounts_client().get_accounts(owner_id=None, member_id=None, properties=None)
 ```
 
 
@@ -101,7 +101,7 @@ Adds a tag to a build.
 * `:param str tag: The tag to add.`
 #### Example usage:
 ```
-connection.clients.get_build_client().add_build_tag(project,build_id,tag)
+connection.clients.get_build_client().add_build_tag(project, build_id, tag)
 ```
 
 
@@ -116,7 +116,7 @@ Adds tags to a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().add_build_tags(tags,project,build_id)
+connection.clients.get_build_client().add_build_tags(tags, project, build_id)
 ```
 
 
@@ -133,7 +133,7 @@ Associates an artifact with a build.
 ```
 from azure.devops.v5_1.build.models import BuildArtifact
 
-connection.clients.get_build_client().create_artifact(artifact,project,build_id)
+connection.clients.get_build_client().create_artifact(artifact, project, build_id)
 ```
 
 
@@ -151,7 +151,7 @@ Creates a new definition.
 ```
 from azure.devops.v5_1.build.models import BuildDefinition
 
-connection.clients.get_build_client().create_definition(definition,project,definition_to_clone_id,definition_to_clone_revision)
+connection.clients.get_build_client().create_definition(definition, project, definition_to_clone_id=None, definition_to_clone_revision=None)
 ```
 
 
@@ -165,7 +165,7 @@ Deletes a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().delete_build(project,build_id)
+connection.clients.get_build_client().delete_build(project, build_id)
 ```
 
 
@@ -180,7 +180,7 @@ Removes a tag from a build.
 * `:param str tag: The tag to remove.`
 #### Example usage:
 ```
-connection.clients.get_build_client().delete_build_tag(project,build_id,tag)
+connection.clients.get_build_client().delete_build_tag(project, build_id, tag)
 ```
 
 
@@ -194,7 +194,7 @@ Deletes a definition and all associated builds.
 * `:param int definition_id: The ID of the definition.`
 #### Example usage:
 ```
-connection.clients.get_build_client().delete_definition(project,definition_id)
+connection.clients.get_build_client().delete_definition(project, definition_id)
 ```
 
 
@@ -208,7 +208,7 @@ Deletes a build definition template.
 * `:param str template_id: The ID of the template.`
 #### Example usage:
 ```
-connection.clients.get_build_client().delete_template(project,template_id)
+connection.clients.get_build_client().delete_template(project, template_id)
 ```
 
 
@@ -223,7 +223,7 @@ Gets a specific artifact for a build.
 * `:param str artifact_name: The name of the artifact.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_artifact(project,build_id,artifact_name)
+connection.clients.get_build_client().get_artifact(project, build_id, artifact_name)
 ```
 
 
@@ -238,7 +238,7 @@ Gets a specific artifact for a build.
 * `:param str artifact_name: The name of the artifact.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_artifact_content_zip(project,build_id,artifact_name)
+connection.clients.get_build_client().get_artifact_content_zip(project, build_id, artifact_name, **kwargs)
 ```
 
 
@@ -252,7 +252,7 @@ Gets all artifacts for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_artifacts(project,build_id)
+connection.clients.get_build_client().get_artifacts(project, build_id)
 ```
 
 
@@ -267,7 +267,7 @@ Gets a build
 * `:param str property_filters:`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build(project,build_id,property_filters)
+connection.clients.get_build_client().get_build(project, build_id, property_filters=None)
 ```
 
 
@@ -284,7 +284,7 @@ Gets the changes associated with a build
 * `:param bool include_source_change:`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_changes(project,build_id,continuation_token,top,include_source_change)
+connection.clients.get_build_client().get_build_changes(project, build_id, continuation_token=None, top=None, include_source_change=None)
 ```
 
 
@@ -310,7 +310,7 @@ Gets controller, optionally filtered by name
 * `:param str name:`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_controllers(name)
+connection.clients.get_build_client().get_build_controllers(name=None)
 ```
 
 
@@ -327,7 +327,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_log(project,build_id,log_id,start_line,end_line)
+connection.clients.get_build_client().get_build_log(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 
 
@@ -344,7 +344,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_log_lines(project,build_id,log_id,start_line,end_line)
+connection.clients.get_build_client().get_build_log_lines(project, build_id, log_id, start_line=None, end_line=None)
 ```
 
 
@@ -361,7 +361,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_log_zip(project,build_id,log_id,start_line,end_line)
+connection.clients.get_build_client().get_build_log_zip(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 
 
@@ -375,7 +375,7 @@ Gets the logs for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_logs(project,build_id)
+connection.clients.get_build_client().get_build_logs(project, build_id)
 ```
 
 
@@ -389,7 +389,7 @@ Gets the logs for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_logs_zip(project,build_id)
+connection.clients.get_build_client().get_build_logs_zip(project, build_id, **kwargs)
 ```
 
 
@@ -402,7 +402,7 @@ Gets all build definition options supported by the system.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_option_definitions(project)
+connection.clients.get_build_client().get_build_option_definitions(project=None)
 ```
 
 
@@ -415,7 +415,7 @@ Gets the build settings.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_settings(project)
+connection.clients.get_build_client().get_build_settings(project=None)
 ```
 
 
@@ -429,7 +429,7 @@ Gets the tags for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_tags(project,build_id)
+connection.clients.get_build_client().get_build_tags(project, build_id)
 ```
 
 
@@ -446,7 +446,7 @@ Gets details for a build
 * `:param str plan_id:`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_timeline(project,build_id,timeline_id,change_id,plan_id)
+connection.clients.get_build_client().get_build_timeline(project, build_id, timeline_id=None, change_id=None, plan_id=None)
 ```
 
 
@@ -461,7 +461,7 @@ Gets the work items associated with a build.
 * `:param int top: The maximum number of work items to return.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_work_items_refs(project,build_id,top)
+connection.clients.get_build_client().get_build_work_items_refs(project, build_id, top=None)
 ```
 
 
@@ -477,7 +477,7 @@ Gets the work items associated with a build, filtered to specific commits.
 * `:param int top: The maximum number of work items to return, or the number of commits to consider if no commit IDs are specified.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_build_work_items_refs_from_commits(commit_ids,project,build_id,top)
+connection.clients.get_build_client().get_build_work_items_refs_from_commits(commit_ids, project, build_id, top=None)
 ```
 
 
@@ -510,7 +510,7 @@ Gets a list of builds.
 * `:param str repository_type: If specified, filters to builds that built from repositories of this type.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_builds(project,definitions,queues,build_number,min_time,max_time,requested_for,reason_filter,status_filter,result_filter,tag_filters,properties,top,continuation_token,max_builds_per_definition,deleted_filter,query_order,branch_name,build_ids,repository_id,repository_type)
+connection.clients.get_build_client().get_builds(project, definitions=None, queues=None, build_number=None, min_time=None, max_time=None, requested_for=None, reason_filter=None, status_filter=None, result_filter=None, tag_filters=None, properties=None, top=None, continuation_token=None, max_builds_per_definition=None, deleted_filter=None, query_order=None, branch_name=None, build_ids=None, repository_id=None, repository_type=None)
 ```
 
 
@@ -528,7 +528,7 @@ Gets a definition, optionally at a specific revision.
 * `:param bool include_latest_builds:`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_definition(project,definition_id,revision,min_metrics_time,property_filters,include_latest_builds)
+connection.clients.get_build_client().get_definition(project, definition_id, revision=None, min_metrics_time=None, property_filters=None, include_latest_builds=None)
 ```
 
 
@@ -542,7 +542,7 @@ Gets all revisions of a definition.
 * `:param int definition_id: The ID of the definition.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_definition_revisions(project,definition_id)
+connection.clients.get_build_client().get_definition_revisions(project, definition_id)
 ```
 
 
@@ -571,7 +571,7 @@ Gets a list of definitions.
 * `:param str yaml_filename: If specified, filters to YAML definitions that match the given filename.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_definitions(project,name,repository_id,repository_type,query_order,top,continuation_token,min_metrics_time,definition_ids,path,built_after,not_built_after,include_all_properties,include_latest_builds,task_id_filter,process_type,yaml_filename)
+connection.clients.get_build_client().get_definitions(project, name=None, repository_id=None, repository_type=None, query_order=None, top=None, continuation_token=None, min_metrics_time=None, definition_ids=None, path=None, built_after=None, not_built_after=None, include_all_properties=None, include_latest_builds=None, task_id_filter=None, process_type=None, yaml_filename=None)
 ```
 
 
@@ -588,7 +588,7 @@ Gets a file from the build.
 * `:param str file_name: The name that the file will be set to.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_file(project,build_id,artifact_name,file_id,file_name)
+connection.clients.get_build_client().get_file(project, build_id, artifact_name, file_id, file_name, **kwargs)
 ```
 
 
@@ -615,7 +615,7 @@ Gets a specific build definition template.
 * `:param str template_id: The ID of the requested template.`
 #### Example usage:
 ```
-connection.clients.get_build_client().get_template(project,template_id)
+connection.clients.get_build_client().get_template(project, template_id)
 ```
 
 
@@ -647,7 +647,7 @@ Queues a build
 ```
 from azure.devops.v5_1.build.models import Build
 
-connection.clients.get_build_client().queue_build(build,project,ignore_warnings,check_in_ticket,source_build_id)
+connection.clients.get_build_client().queue_build(build, project, ignore_warnings=None, check_in_ticket=None, source_build_id=None)
 ```
 
 
@@ -662,7 +662,7 @@ Restores a deleted definition
 * `:param bool deleted: When false, restores a deleted definition.`
 #### Example usage:
 ```
-connection.clients.get_build_client().restore_definition(project,definition_id,deleted)
+connection.clients.get_build_client().restore_definition(project, definition_id, deleted)
 ```
 
 
@@ -679,7 +679,7 @@ Updates an existing build definition template.
 ```
 from azure.devops.v5_1.build.models import BuildDefinitionTemplate
 
-connection.clients.get_build_client().save_template(template,project,template_id)
+connection.clients.get_build_client().save_template(template, project, template_id)
 ```
 
 
@@ -697,7 +697,7 @@ Updates a build.
 ```
 from azure.devops.v5_1.build.models import Build
 
-connection.clients.get_build_client().update_build(build,project,build_id,retry)
+connection.clients.get_build_client().update_build(build, project, build_id, retry=None)
 ```
 
 
@@ -713,7 +713,7 @@ Updates the build settings.
 ```
 from azure.devops.v5_1.build.models import BuildSettings
 
-connection.clients.get_build_client().update_build_settings(settings,project)
+connection.clients.get_build_client().update_build_settings(settings, project=None)
 ```
 
 
@@ -727,7 +727,7 @@ Updates multiple builds.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_build_client().update_builds(builds,project)
+connection.clients.get_build_client().update_builds(builds, project)
 ```
 
 
@@ -746,7 +746,7 @@ Updates an existing definition.
 ```
 from azure.devops.v5_1.build.models import BuildDefinition
 
-connection.clients.get_build_client().update_definition(definition,project,definition_id,secrets_source_definition_id,secrets_source_definition_revision)
+connection.clients.get_build_client().update_definition(definition, project, definition_id, secrets_source_definition_id=None, secrets_source_definition_revision=None)
 ```
 
 
@@ -762,7 +762,7 @@ Adds a tag to a build.
 * `:param str tag: The tag to add.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().add_build_tag(project,build_id,tag)
+connection.clients.get_cloud_load_test_client().add_build_tag(project, build_id, tag)
 ```
 
 
@@ -777,7 +777,7 @@ Adds tags to a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().add_build_tags(tags,project,build_id)
+connection.clients.get_cloud_load_test_client().add_build_tags(tags, project, build_id)
 ```
 
 
@@ -794,7 +794,7 @@ Associates an artifact with a build.
 ```
 from azure.devops.v5_1.build.models import BuildArtifact
 
-connection.clients.get_cloud_load_test_client().create_artifact(artifact,project,build_id)
+connection.clients.get_cloud_load_test_client().create_artifact(artifact, project, build_id)
 ```
 
 
@@ -812,7 +812,7 @@ Creates a new definition.
 ```
 from azure.devops.v5_1.build.models import BuildDefinition
 
-connection.clients.get_cloud_load_test_client().create_definition(definition,project,definition_to_clone_id,definition_to_clone_revision)
+connection.clients.get_cloud_load_test_client().create_definition(definition, project, definition_to_clone_id=None, definition_to_clone_revision=None)
 ```
 
 
@@ -826,7 +826,7 @@ Deletes a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().delete_build(project,build_id)
+connection.clients.get_cloud_load_test_client().delete_build(project, build_id)
 ```
 
 
@@ -841,7 +841,7 @@ Removes a tag from a build.
 * `:param str tag: The tag to remove.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().delete_build_tag(project,build_id,tag)
+connection.clients.get_cloud_load_test_client().delete_build_tag(project, build_id, tag)
 ```
 
 
@@ -855,7 +855,7 @@ Deletes a definition and all associated builds.
 * `:param int definition_id: The ID of the definition.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().delete_definition(project,definition_id)
+connection.clients.get_cloud_load_test_client().delete_definition(project, definition_id)
 ```
 
 
@@ -869,7 +869,7 @@ Deletes a build definition template.
 * `:param str template_id: The ID of the template.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().delete_template(project,template_id)
+connection.clients.get_cloud_load_test_client().delete_template(project, template_id)
 ```
 
 
@@ -884,7 +884,7 @@ Gets a specific artifact for a build.
 * `:param str artifact_name: The name of the artifact.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_artifact(project,build_id,artifact_name)
+connection.clients.get_cloud_load_test_client().get_artifact(project, build_id, artifact_name)
 ```
 
 
@@ -899,7 +899,7 @@ Gets a specific artifact for a build.
 * `:param str artifact_name: The name of the artifact.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_artifact_content_zip(project,build_id,artifact_name)
+connection.clients.get_cloud_load_test_client().get_artifact_content_zip(project, build_id, artifact_name, **kwargs)
 ```
 
 
@@ -913,7 +913,7 @@ Gets all artifacts for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_artifacts(project,build_id)
+connection.clients.get_cloud_load_test_client().get_artifacts(project, build_id)
 ```
 
 
@@ -928,7 +928,7 @@ Gets a build
 * `:param str property_filters:`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build(project,build_id,property_filters)
+connection.clients.get_cloud_load_test_client().get_build(project, build_id, property_filters=None)
 ```
 
 
@@ -945,7 +945,7 @@ Gets the changes associated with a build
 * `:param bool include_source_change:`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_changes(project,build_id,continuation_token,top,include_source_change)
+connection.clients.get_cloud_load_test_client().get_build_changes(project, build_id, continuation_token=None, top=None, include_source_change=None)
 ```
 
 
@@ -971,7 +971,7 @@ Gets controller, optionally filtered by name
 * `:param str name:`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_controllers(name)
+connection.clients.get_cloud_load_test_client().get_build_controllers(name=None)
 ```
 
 
@@ -988,7 +988,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_log(project,build_id,log_id,start_line,end_line)
+connection.clients.get_cloud_load_test_client().get_build_log(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 
 
@@ -1005,7 +1005,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_log_lines(project,build_id,log_id,start_line,end_line)
+connection.clients.get_cloud_load_test_client().get_build_log_lines(project, build_id, log_id, start_line=None, end_line=None)
 ```
 
 
@@ -1022,7 +1022,7 @@ Gets an individual log file for a build.
 * `:param long end_line: The end line.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_log_zip(project,build_id,log_id,start_line,end_line)
+connection.clients.get_cloud_load_test_client().get_build_log_zip(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 
 
@@ -1036,7 +1036,7 @@ Gets the logs for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_logs(project,build_id)
+connection.clients.get_cloud_load_test_client().get_build_logs(project, build_id)
 ```
 
 
@@ -1050,7 +1050,7 @@ Gets the logs for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_logs_zip(project,build_id)
+connection.clients.get_cloud_load_test_client().get_build_logs_zip(project, build_id, **kwargs)
 ```
 
 
@@ -1063,7 +1063,7 @@ Gets all build definition options supported by the system.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_option_definitions(project)
+connection.clients.get_cloud_load_test_client().get_build_option_definitions(project=None)
 ```
 
 
@@ -1076,7 +1076,7 @@ Gets the build settings.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_settings(project)
+connection.clients.get_cloud_load_test_client().get_build_settings(project=None)
 ```
 
 
@@ -1090,7 +1090,7 @@ Gets the tags for a build.
 * `:param int build_id: The ID of the build.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_tags(project,build_id)
+connection.clients.get_cloud_load_test_client().get_build_tags(project, build_id)
 ```
 
 
@@ -1107,7 +1107,7 @@ Gets details for a build
 * `:param str plan_id:`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_timeline(project,build_id,timeline_id,change_id,plan_id)
+connection.clients.get_cloud_load_test_client().get_build_timeline(project, build_id, timeline_id=None, change_id=None, plan_id=None)
 ```
 
 
@@ -1122,7 +1122,7 @@ Gets the work items associated with a build.
 * `:param int top: The maximum number of work items to return.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_work_items_refs(project,build_id,top)
+connection.clients.get_cloud_load_test_client().get_build_work_items_refs(project, build_id, top=None)
 ```
 
 
@@ -1138,7 +1138,7 @@ Gets the work items associated with a build, filtered to specific commits.
 * `:param int top: The maximum number of work items to return, or the number of commits to consider if no commit IDs are specified.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_build_work_items_refs_from_commits(commit_ids,project,build_id,top)
+connection.clients.get_cloud_load_test_client().get_build_work_items_refs_from_commits(commit_ids, project, build_id, top=None)
 ```
 
 
@@ -1171,7 +1171,7 @@ Gets a list of builds.
 * `:param str repository_type: If specified, filters to builds that built from repositories of this type.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_builds(project,definitions,queues,build_number,min_time,max_time,requested_for,reason_filter,status_filter,result_filter,tag_filters,properties,top,continuation_token,max_builds_per_definition,deleted_filter,query_order,branch_name,build_ids,repository_id,repository_type)
+connection.clients.get_cloud_load_test_client().get_builds(project, definitions=None, queues=None, build_number=None, min_time=None, max_time=None, requested_for=None, reason_filter=None, status_filter=None, result_filter=None, tag_filters=None, properties=None, top=None, continuation_token=None, max_builds_per_definition=None, deleted_filter=None, query_order=None, branch_name=None, build_ids=None, repository_id=None, repository_type=None)
 ```
 
 
@@ -1189,7 +1189,7 @@ Gets a definition, optionally at a specific revision.
 * `:param bool include_latest_builds:`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_definition(project,definition_id,revision,min_metrics_time,property_filters,include_latest_builds)
+connection.clients.get_cloud_load_test_client().get_definition(project, definition_id, revision=None, min_metrics_time=None, property_filters=None, include_latest_builds=None)
 ```
 
 
@@ -1203,7 +1203,7 @@ Gets all revisions of a definition.
 * `:param int definition_id: The ID of the definition.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_definition_revisions(project,definition_id)
+connection.clients.get_cloud_load_test_client().get_definition_revisions(project, definition_id)
 ```
 
 
@@ -1232,7 +1232,7 @@ Gets a list of definitions.
 * `:param str yaml_filename: If specified, filters to YAML definitions that match the given filename.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_definitions(project,name,repository_id,repository_type,query_order,top,continuation_token,min_metrics_time,definition_ids,path,built_after,not_built_after,include_all_properties,include_latest_builds,task_id_filter,process_type,yaml_filename)
+connection.clients.get_cloud_load_test_client().get_definitions(project, name=None, repository_id=None, repository_type=None, query_order=None, top=None, continuation_token=None, min_metrics_time=None, definition_ids=None, path=None, built_after=None, not_built_after=None, include_all_properties=None, include_latest_builds=None, task_id_filter=None, process_type=None, yaml_filename=None)
 ```
 
 
@@ -1249,7 +1249,7 @@ Gets a file from the build.
 * `:param str file_name: The name that the file will be set to.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_file(project,build_id,artifact_name,file_id,file_name)
+connection.clients.get_cloud_load_test_client().get_file(project, build_id, artifact_name, file_id, file_name, **kwargs)
 ```
 
 
@@ -1276,7 +1276,7 @@ Gets a specific build definition template.
 * `:param str template_id: The ID of the requested template.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().get_template(project,template_id)
+connection.clients.get_cloud_load_test_client().get_template(project, template_id)
 ```
 
 
@@ -1308,7 +1308,7 @@ Queues a build
 ```
 from azure.devops.v5_1.build.models import Build
 
-connection.clients.get_cloud_load_test_client().queue_build(build,project,ignore_warnings,check_in_ticket,source_build_id)
+connection.clients.get_cloud_load_test_client().queue_build(build, project, ignore_warnings=None, check_in_ticket=None, source_build_id=None)
 ```
 
 
@@ -1323,7 +1323,7 @@ Restores a deleted definition
 * `:param bool deleted: When false, restores a deleted definition.`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().restore_definition(project,definition_id,deleted)
+connection.clients.get_cloud_load_test_client().restore_definition(project, definition_id, deleted)
 ```
 
 
@@ -1340,7 +1340,7 @@ Updates an existing build definition template.
 ```
 from azure.devops.v5_1.build.models import BuildDefinitionTemplate
 
-connection.clients.get_cloud_load_test_client().save_template(template,project,template_id)
+connection.clients.get_cloud_load_test_client().save_template(template, project, template_id)
 ```
 
 
@@ -1358,7 +1358,7 @@ Updates a build.
 ```
 from azure.devops.v5_1.build.models import Build
 
-connection.clients.get_cloud_load_test_client().update_build(build,project,build_id,retry)
+connection.clients.get_cloud_load_test_client().update_build(build, project, build_id, retry=None)
 ```
 
 
@@ -1374,7 +1374,7 @@ Updates the build settings.
 ```
 from azure.devops.v5_1.build.models import BuildSettings
 
-connection.clients.get_cloud_load_test_client().update_build_settings(settings,project)
+connection.clients.get_cloud_load_test_client().update_build_settings(settings, project=None)
 ```
 
 
@@ -1388,7 +1388,7 @@ Updates multiple builds.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_cloud_load_test_client().update_builds(builds,project)
+connection.clients.get_cloud_load_test_client().update_builds(builds, project)
 ```
 
 
@@ -1407,7 +1407,7 @@ Updates an existing definition.
 ```
 from azure.devops.v5_1.build.models import BuildDefinition
 
-connection.clients.get_cloud_load_test_client().update_definition(definition,project,definition_id,secrets_source_definition_id,secrets_source_definition_revision)
+connection.clients.get_cloud_load_test_client().update_definition(definition, project, definition_id, secrets_source_definition_id=None, secrets_source_definition_revision=None)
 ```
 
 
@@ -1424,7 +1424,7 @@ Create a team in a team project.
 ```
 from azure.devops.v5_1.core.models import WebApiTeam
 
-connection.clients.get_core_client().create_team(team,project_id)
+connection.clients.get_core_client().create_team(team, project_id)
 ```
 
 
@@ -1438,7 +1438,7 @@ Delete a team.
 * `:param str team_id: The name or ID of the team to delete.`
 #### Example usage:
 ```
-connection.clients.get_core_client().delete_team(project_id,team_id)
+connection.clients.get_core_client().delete_team(project_id, team_id)
 ```
 
 
@@ -1478,7 +1478,7 @@ Get project with the specified id or name, optionally including capabilities.
 * `:param bool include_history: Search within renamed projects (that had such name in the past).`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_project(project_id,include_capabilities,include_history)
+connection.clients.get_core_client().get_project(project_id, include_capabilities=None, include_history=None)
 ```
 
 
@@ -1505,7 +1505,7 @@ Get project collection references for this application.
 * `:param int skip:`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_project_collections(top,skip)
+connection.clients.get_core_client().get_project_collections(top=None, skip=None)
 ```
 
 
@@ -1522,7 +1522,7 @@ Get all projects in the organization that the authenticated user has access to.
 * `:param bool get_default_team_image_url:`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_projects(state_filter,top,skip,continuation_token,get_default_team_image_url)
+connection.clients.get_core_client().get_projects(state_filter=None, top=None, skip=None, continuation_token=None, get_default_team_image_url=None)
 ```
 
 
@@ -1537,7 +1537,7 @@ Get a specific team.
 * `:param bool expand_identity: A value indicating whether or not to expand Identity information in the result WebApiTeam object.`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_team(project_id,team_id,expand_identity)
+connection.clients.get_core_client().get_team(project_id, team_id, expand_identity=None)
 ```
 
 
@@ -1553,7 +1553,7 @@ Get a list of members for a specific team.
 * `:param int skip:`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_team_members_with_extended_properties(project_id,team_id,top,skip)
+connection.clients.get_core_client().get_team_members_with_extended_properties(project_id, team_id, top=None, skip=None)
 ```
 
 
@@ -1570,7 +1570,7 @@ Get a list of teams.
 * `:param bool expand_identity: A value indicating whether or not to expand Identity information in the result WebApiTeam object.`
 #### Example usage:
 ```
-connection.clients.get_core_client().get_teams(project_id,mine,top,skip,expand_identity)
+connection.clients.get_core_client().get_teams(project_id, mine=None, top=None, skip=None, expand_identity=None)
 ```
 
 
@@ -1614,7 +1614,7 @@ Update an existing project's name, abbreviation, description, or restore a proje
 ```
 from azure.devops.v5_1.core.models import TeamProject
 
-connection.clients.get_core_client().update_project(project_update,project_id)
+connection.clients.get_core_client().update_project(project_update, project_id)
 ```
 
 
@@ -1631,7 +1631,7 @@ Update a team's name and/or description.
 ```
 from azure.devops.v5_1.core.models import WebApiTeam
 
-connection.clients.get_core_client().update_team(team_data,project_id,team_id)
+connection.clients.get_core_client().update_team(team_data, project_id, team_id)
 ```
 
 
@@ -1651,7 +1651,7 @@ Create a comment on a specific thread in a pull request (up to 500 comments can 
 ```
 from azure.devops.v5_1.git.models import Comment
 
-connection.clients.get_git_client().create_comment(comment,repository_id,pull_request_id,thread_id,project)
+connection.clients.get_git_client().create_comment(comment, repository_id, pull_request_id, thread_id, project=None)
 ```
 
 
@@ -1669,7 +1669,7 @@ Create Git commit status.
 ```
 from azure.devops.v5_1.git.models import GitStatus
 
-connection.clients.get_git_client().create_commit_status(git_commit_status_to_create,commit_id,repository_id,project)
+connection.clients.get_git_client().create_commit_status(git_commit_status_to_create, commit_id, repository_id, project=None)
 ```
 
 
@@ -1687,7 +1687,7 @@ Create a pull request.
 ```
 from azure.devops.v5_1.git.models import GitPullRequest
 
-connection.clients.get_git_client().create_pull_request(git_pull_request_to_create,repository_id,project,supports_iterations)
+connection.clients.get_git_client().create_pull_request(git_pull_request_to_create, repository_id, project=None, supports_iterations=None)
 ```
 
 
@@ -1706,7 +1706,7 @@ Add a reviewer to a pull request or cast a vote.
 ```
 from azure.devops.v5_1.git.models>` reviewer: Reviewer's vote.<br />If the reviewer's ID is included here, it must match the reviewerID parameter.<br / import IdentityRefWithVote
 
-connection.clients.get_git_client().create_pull_request_reviewer(reviewer,repository_id,pull_request_id,reviewer_id,project)
+connection.clients.get_git_client().create_pull_request_reviewer(reviewer, repository_id, pull_request_id, reviewer_id, project=None)
 ```
 
 
@@ -1722,7 +1722,7 @@ Add reviewers to a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().create_pull_request_reviewers(reviewers,repository_id,pull_request_id,project)
+connection.clients.get_git_client().create_pull_request_reviewers(reviewers, repository_id, pull_request_id, project=None)
 ```
 
 
@@ -1739,7 +1739,7 @@ Push changes to the repository.
 ```
 from azure.devops.v5_1.git.models import GitPush
 
-connection.clients.get_git_client().create_push(push,repository_id,project)
+connection.clients.get_git_client().create_push(push, repository_id, project=None)
 ```
 
 
@@ -1756,7 +1756,7 @@ Create a git repository in a team project.
 ```
 from azure.devops.v5_1.git.models import GitRepositoryCreateOptions
 
-connection.clients.get_git_client().create_repository(git_repository_to_create,project,source_ref)
+connection.clients.get_git_client().create_repository(git_repository_to_create, project=None, source_ref=None)
 ```
 
 
@@ -1774,7 +1774,7 @@ Create a thread in a pull request.
 ```
 from azure.devops.v5_1.git.models import GitPullRequestCommentThread
 
-connection.clients.get_git_client().create_thread(comment_thread,repository_id,pull_request_id,project)
+connection.clients.get_git_client().create_thread(comment_thread, repository_id, pull_request_id, project=None)
 ```
 
 
@@ -1791,7 +1791,7 @@ Delete a comment associated with a specific thread in a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().delete_comment(repository_id,pull_request_id,thread_id,comment_id,project)
+connection.clients.get_git_client().delete_comment(repository_id, pull_request_id, thread_id, comment_id, project=None)
 ```
 
 
@@ -1807,7 +1807,7 @@ Remove a reviewer from a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().delete_pull_request_reviewer(repository_id,pull_request_id,reviewer_id,project)
+connection.clients.get_git_client().delete_pull_request_reviewer(repository_id, pull_request_id, reviewer_id, project=None)
 ```
 
 
@@ -1821,7 +1821,7 @@ Delete a git repository
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().delete_repository(repository_id,project)
+connection.clients.get_git_client().delete_repository(repository_id, project=None)
 ```
 
 
@@ -1839,7 +1839,7 @@ Get a single blob.
 * `:param bool resolve_lfs: If true, try to resolve a blob to its LFS contents, if it's an LFS pointer file. Only compatible with octet-stream Accept headers or $format types`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_blob(repository_id,sha1,project,download,file_name,resolve_lfs)
+connection.clients.get_git_client().get_blob(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None)
 ```
 
 
@@ -1857,7 +1857,7 @@ Get a single blob.
 * `:param bool resolve_lfs: If true, try to resolve a blob to its LFS contents, if it's an LFS pointer file. Only compatible with octet-stream Accept headers or $format types`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_blob_content(repository_id,sha1,project,download,file_name,resolve_lfs)
+connection.clients.get_git_client().get_blob_content(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None, **kwargs)
 ```
 
 
@@ -1875,7 +1875,7 @@ Get a single blob.
 * `:param bool resolve_lfs: If true, try to resolve a blob to its LFS contents, if it's an LFS pointer file. Only compatible with octet-stream Accept headers or $format types`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_blob_zip(repository_id,sha1,project,download,file_name,resolve_lfs)
+connection.clients.get_git_client().get_blob_zip(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None, **kwargs)
 ```
 
 
@@ -1891,7 +1891,7 @@ Gets one or more blobs in a zip file download.
 * `:param str filename:`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_blobs_zip(blob_ids,repository_id,project,filename)
+connection.clients.get_git_client().get_blobs_zip(blob_ids, repository_id, project=None, filename=None, **kwargs)
 ```
 
 
@@ -1909,7 +1909,7 @@ Retrieve statistics about a single branch.
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_branch(repository_id,name,project,base_version_descriptor)
+connection.clients.get_git_client().get_branch(repository_id, name, project=None, base_version_descriptor=None)
 ```
 
 
@@ -1926,7 +1926,7 @@ Retrieve statistics about all branches within a repository.
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_branches(repository_id,project,base_version_descriptor)
+connection.clients.get_git_client().get_branches(repository_id, project=None, base_version_descriptor=None)
 ```
 
 
@@ -1943,7 +1943,7 @@ Retrieve changes for a particular commit.
 * `:param int skip: The number of changes to skip.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_changes(commit_id,repository_id,project,top,skip)
+connection.clients.get_git_client().get_changes(commit_id, repository_id, project=None, top=None, skip=None)
 ```
 
 
@@ -1960,7 +1960,7 @@ Retrieve a comment associated with a specific thread in a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_comment(repository_id,pull_request_id,thread_id,comment_id,project)
+connection.clients.get_git_client().get_comment(repository_id, pull_request_id, thread_id, comment_id, project=None)
 ```
 
 
@@ -1976,7 +1976,7 @@ Retrieve all comments associated with a specific thread in a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_comments(repository_id,pull_request_id,thread_id,project)
+connection.clients.get_git_client().get_comments(repository_id, pull_request_id, thread_id, project=None)
 ```
 
 
@@ -1992,7 +1992,7 @@ Retrieve a particular commit.
 * `:param int change_count: The number of changes to include in the result.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_commit(commit_id,repository_id,project,change_count)
+connection.clients.get_git_client().get_commit(commit_id, repository_id, project=None, change_count=None)
 ```
 
 
@@ -2014,7 +2014,7 @@ Find the closest common commit (the merge base) between base and target commits,
 from azure.devops.v5_1.git.models import GitBaseVersionDescriptor
 from azure.devops.v5_1.git.models import GitTargetVersionDescriptor
 
-connection.clients.get_git_client().get_commit_diffs(repository_id,project,diff_common_commit,top,skip,base_version_descriptor,target_version_descriptor)
+connection.clients.get_git_client().get_commit_diffs(repository_id, project=None, diff_common_commit=None, top=None, skip=None, base_version_descriptor=None, target_version_descriptor=None)
 ```
 
 
@@ -2033,7 +2033,7 @@ Retrieve git commits for a project
 ```
 from azure.devops.v5_1.git.models import GitQueryCommitsCriteria
 
-connection.clients.get_git_client().get_commits(repository_id,search_criteria,project,skip,top)
+connection.clients.get_git_client().get_commits(repository_id, search_criteria, project=None, skip=None, top=None)
 ```
 
 
@@ -2053,7 +2053,7 @@ Retrieve git commits for a project matching the search criteria
 ```
 from azure.devops.v5_1.git.models import GitQueryCommitsCriteria
 
-connection.clients.get_git_client().get_commits_batch(search_criteria,repository_id,project,skip,top,include_statuses)
+connection.clients.get_git_client().get_commits_batch(search_criteria, repository_id, project=None, skip=None, top=None, include_statuses=None)
 ```
 
 
@@ -2078,7 +2078,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_item(repository_id,path,project,scope_path,recursion_level,include_content_metadata,latest_processed_change,download,version_descriptor,include_content,resolve_lfs)
+connection.clients.get_git_client().get_item(repository_id, path, project=None, scope_path=None, recursion_level=None, include_content_metadata=None, latest_processed_change=None, download=None, version_descriptor=None, include_content=None, resolve_lfs=None)
 ```
 
 
@@ -2103,7 +2103,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_item_content(repository_id,path,project,scope_path,recursion_level,include_content_metadata,latest_processed_change,download,version_descriptor,include_content,resolve_lfs)
+connection.clients.get_git_client().get_item_content(repository_id, path, project=None, scope_path=None, recursion_level=None, include_content_metadata=None, latest_processed_change=None, download=None, version_descriptor=None, include_content=None, resolve_lfs=None, **kwargs)
 ```
 
 
@@ -2128,7 +2128,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_item_text(repository_id,path,project,scope_path,recursion_level,include_content_metadata,latest_processed_change,download,version_descriptor,include_content,resolve_lfs)
+connection.clients.get_git_client().get_item_text(repository_id, path, project=None, scope_path=None, recursion_level=None, include_content_metadata=None, latest_processed_change=None, download=None, version_descriptor=None, include_content=None, resolve_lfs=None, **kwargs)
 ```
 
 
@@ -2153,7 +2153,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_item_zip(repository_id,path,project,scope_path,recursion_level,include_content_metadata,latest_processed_change,download,version_descriptor,include_content,resolve_lfs)
+connection.clients.get_git_client().get_item_zip(repository_id, path, project=None, scope_path=None, recursion_level=None, include_content_metadata=None, latest_processed_change=None, download=None, version_descriptor=None, include_content=None, resolve_lfs=None, **kwargs)
 ```
 
 
@@ -2176,7 +2176,7 @@ Get Item Metadata and/or Content for a collection of items. The download paramet
 ```
 from azure.devops.v5_1.git.models import GitVersionDescriptor
 
-connection.clients.get_git_client().get_items(repository_id,project,scope_path,recursion_level,include_content_metadata,latest_processed_change,download,include_links,version_descriptor)
+connection.clients.get_git_client().get_items(repository_id, project=None, scope_path=None, recursion_level=None, include_content_metadata=None, latest_processed_change=None, download=None, include_links=None, version_descriptor=None)
 ```
 
 
@@ -2193,7 +2193,7 @@ Post for retrieving a creating a batch out of a set of items in a repo / project
 ```
 from azure.devops.v5_1.git.models import GitItemRequestData
 
-connection.clients.get_git_client().get_items_batch(request_data,repository_id,project)
+connection.clients.get_git_client().get_items_batch(request_data, repository_id, project=None)
 ```
 
 
@@ -2213,7 +2213,7 @@ Retrieve a pull request.
 * `:param bool include_work_item_refs: If true, the pull request will be returned with the associated work item references.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request(repository_id,pull_request_id,project,max_comment_length,skip,top,include_commits,include_work_item_refs)
+connection.clients.get_git_client().get_pull_request(repository_id, pull_request_id, project=None, max_comment_length=None, skip=None, top=None, include_commits=None, include_work_item_refs=None)
 ```
 
 
@@ -2227,7 +2227,7 @@ Retrieve a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_by_id(pull_request_id,project)
+connection.clients.get_git_client().get_pull_request_by_id(pull_request_id, project=None)
 ```
 
 
@@ -2244,7 +2244,7 @@ Get the commits for the specified pull request.
 * `:param str continuation_token: The continuation token used for pagination.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_commits(repository_id,pull_request_id,project,top,continuation_token)
+connection.clients.get_git_client().get_pull_request_commits(repository_id, pull_request_id, project=None, top=None, continuation_token=None)
 ```
 
 
@@ -2260,7 +2260,7 @@ Get the specified iteration for a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_iteration(repository_id,pull_request_id,iteration_id,project)
+connection.clients.get_git_client().get_pull_request_iteration(repository_id, pull_request_id, iteration_id, project=None)
 ```
 
 
@@ -2279,7 +2279,7 @@ Retrieve the changes made in a pull request between two iterations.
 * `:param int compare_to: ID of the pull request iteration to compare against.  The default value is zero which indicates the comparison is made against the common commit between the source and target branches`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_iteration_changes(repository_id,pull_request_id,iteration_id,project,top,skip,compare_to)
+connection.clients.get_git_client().get_pull_request_iteration_changes(repository_id, pull_request_id, iteration_id, project=None, top=None, skip=None, compare_to=None)
 ```
 
 
@@ -2297,7 +2297,7 @@ Get the commits for the specified iteration of a pull request.
 * `:param int skip: Number of commits to skip.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_iteration_commits(repository_id,pull_request_id,iteration_id,project,top,skip)
+connection.clients.get_git_client().get_pull_request_iteration_commits(repository_id, pull_request_id, iteration_id, project=None, top=None, skip=None)
 ```
 
 
@@ -2313,7 +2313,7 @@ Get the list of iterations for the specified pull request.
 * `:param bool include_commits: If true, include the commits associated with each iteration in the response.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_iterations(repository_id,pull_request_id,project,include_commits)
+connection.clients.get_git_client().get_pull_request_iterations(repository_id, pull_request_id, project=None, include_commits=None)
 ```
 
 
@@ -2330,7 +2330,7 @@ This API is used to find what pull requests are related to a given commit.  It c
 ```
 from azure.devops.v5_1.git.models import GitPullRequestQuery
 
-connection.clients.get_git_client().get_pull_request_query(queries,repository_id,project)
+connection.clients.get_git_client().get_pull_request_query(queries, repository_id, project=None)
 ```
 
 
@@ -2346,7 +2346,7 @@ Retrieve information about a particular reviewer on a pull request
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_reviewer(repository_id,pull_request_id,reviewer_id,project)
+connection.clients.get_git_client().get_pull_request_reviewer(repository_id, pull_request_id, reviewer_id, project=None)
 ```
 
 
@@ -2361,7 +2361,7 @@ Retrieve the reviewers for a pull request
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_reviewers(repository_id,pull_request_id,project)
+connection.clients.get_git_client().get_pull_request_reviewers(repository_id, pull_request_id, project=None)
 ```
 
 
@@ -2379,7 +2379,7 @@ Retrieve a thread in a pull request.
 * `:param int base_iteration: If specified, thread position will be tracked using this iteration as the left side of the diff.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_thread(repository_id,pull_request_id,thread_id,project,iteration,base_iteration)
+connection.clients.get_git_client().get_pull_request_thread(repository_id, pull_request_id, thread_id, project=None, iteration=None, base_iteration=None)
 ```
 
 
@@ -2394,7 +2394,7 @@ Retrieve a list of work items associated with a pull request.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_pull_request_work_item_refs(repository_id,pull_request_id,project)
+connection.clients.get_git_client().get_pull_request_work_item_refs(repository_id, pull_request_id, project=None)
 ```
 
 
@@ -2414,7 +2414,7 @@ Retrieve all pull requests matching a specified criteria.
 ```
 from azure.devops.v5_1.git.models import GitPullRequestSearchCriteria
 
-connection.clients.get_git_client().get_pull_requests(repository_id,search_criteria,project,max_comment_length,skip,top)
+connection.clients.get_git_client().get_pull_requests(repository_id, search_criteria, project=None, max_comment_length=None, skip=None, top=None)
 ```
 
 
@@ -2433,7 +2433,7 @@ Retrieve all pull requests matching a specified criteria.
 ```
 from azure.devops.v5_1.git.models import GitPullRequestSearchCriteria
 
-connection.clients.get_git_client().get_pull_requests_by_project(project,search_criteria,max_comment_length,skip,top)
+connection.clients.get_git_client().get_pull_requests_by_project(project, search_criteria, max_comment_length=None, skip=None, top=None)
 ```
 
 
@@ -2450,7 +2450,7 @@ Retrieves a particular push.
 * `:param bool include_ref_updates: If true, include the list of refs that were updated by the push.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_push(repository_id,push_id,project,include_commits,include_ref_updates)
+connection.clients.get_git_client().get_push(repository_id, push_id, project=None, include_commits=None, include_ref_updates=None)
 ```
 
 
@@ -2468,7 +2468,7 @@ Retrieve a list of commits associated with a particular push.
 * `:param bool include_links: Set to false to avoid including REST Url links for resources. Defaults to true.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_push_commits(repository_id,push_id,project,top,skip,include_links)
+connection.clients.get_git_client().get_push_commits(repository_id, push_id, project=None, top=None, skip=None, include_links=None)
 ```
 
 
@@ -2487,7 +2487,7 @@ Retrieves pushes associated with the specified repository.
 ```
 from azure.devops.v5_1.git.models import GitPushSearchCriteria
 
-connection.clients.get_git_client().get_pushes(repository_id,project,skip,top,search_criteria)
+connection.clients.get_git_client().get_pushes(repository_id, project=None, skip=None, top=None, search_criteria=None)
 ```
 
 
@@ -2510,7 +2510,7 @@ Queries the provided repository for its refs and returns them.
 * `:param str continuation_token: The continuation token used for pagination.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_refs(repository_id,project,filter,include_links,include_statuses,include_my_branches,latest_statuses_only,peel_tags,filter_contains,top,continuation_token)
+connection.clients.get_git_client().get_refs(repository_id, project=None, filter=None, include_links=None, include_statuses=None, include_my_branches=None, latest_statuses_only=None, peel_tags=None, filter_contains=None, top=None, continuation_token=None)
 ```
 
 
@@ -2526,7 +2526,7 @@ Retrieve git repositories.
 * `:param bool include_hidden: [optional] True to include hidden repositories. The default value is false.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_repositories(project,include_links,include_all_urls,include_hidden)
+connection.clients.get_git_client().get_repositories(project=None, include_links=None, include_all_urls=None, include_hidden=None)
 ```
 
 
@@ -2540,7 +2540,7 @@ Retrieve a git repository.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_repository(repository_id,project)
+connection.clients.get_git_client().get_repository(repository_id, project=None)
 ```
 
 
@@ -2555,7 +2555,7 @@ Retrieve a git repository.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_repository_with_parent(repository_id,include_parent,project)
+connection.clients.get_git_client().get_repository_with_parent(repository_id, include_parent, project=None)
 ```
 
 
@@ -2573,7 +2573,7 @@ Get statuses associated with the Git commit.
 * `:param bool latest_only: The flag indicates whether to get only latest statuses grouped by Context.Name and Context.Genre.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_statuses(commit_id,repository_id,project,top,skip,latest_only)
+connection.clients.get_git_client().get_statuses(commit_id, repository_id, project=None, top=None, skip=None, latest_only=None)
 ```
 
 
@@ -2590,7 +2590,7 @@ Retrieve all threads in a pull request.
 * `:param int base_iteration: If specified, thread positions will be tracked using this iteration as the left side of the diff.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_threads(repository_id,pull_request_id,project,iteration,base_iteration)
+connection.clients.get_git_client().get_threads(repository_id, pull_request_id, project=None, iteration=None, base_iteration=None)
 ```
 
 
@@ -2608,7 +2608,7 @@ The Tree endpoint returns the collection of objects underneath the specified tre
 * `:param str file_name: Name to use if a .zip file is returned. Default is the object ID.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_tree(repository_id,sha1,project,project_id,recursive,file_name)
+connection.clients.get_git_client().get_tree(repository_id, sha1, project=None, project_id=None, recursive=None, file_name=None)
 ```
 
 
@@ -2626,7 +2626,7 @@ The Tree endpoint returns the collection of objects underneath the specified tre
 * `:param str file_name: Name to use if a .zip file is returned. Default is the object ID.`
 #### Example usage:
 ```
-connection.clients.get_git_client().get_tree_zip(repository_id,sha1,project,project_id,recursive,file_name)
+connection.clients.get_git_client().get_tree_zip(repository_id, sha1, project=None, project_id=None, recursive=None, file_name=None, **kwargs)
 ```
 
 
@@ -2646,7 +2646,7 @@ Update a comment associated with a specific thread in a pull request.
 ```
 from azure.devops.v5_1.git.models import Comment
 
-connection.clients.get_git_client().update_comment(comment,repository_id,pull_request_id,thread_id,comment_id,project)
+connection.clients.get_git_client().update_comment(comment, repository_id, pull_request_id, thread_id, comment_id, project=None)
 ```
 
 
@@ -2664,7 +2664,7 @@ Update a pull request
 ```
 from azure.devops.v5_1.git.models import GitPullRequest
 
-connection.clients.get_git_client().update_pull_request(git_pull_request_to_update,repository_id,pull_request_id,project)
+connection.clients.get_git_client().update_pull_request(git_pull_request_to_update, repository_id, pull_request_id, project=None)
 ```
 
 
@@ -2680,7 +2680,7 @@ Reset the votes of multiple reviewers on a pull request.  NOTE: This endpoint on
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_git_client().update_pull_request_reviewers(patch_votes,repository_id,pull_request_id,project)
+connection.clients.get_git_client().update_pull_request_reviewers(patch_votes, repository_id, pull_request_id, project=None)
 ```
 
 
@@ -2699,7 +2699,7 @@ Lock or Unlock a branch.
 ```
 from azure.devops.v5_1.git.models import GitRefUpdate
 
-connection.clients.get_git_client().update_ref(new_ref_info,repository_id,filter,project,project_id)
+connection.clients.get_git_client().update_ref(new_ref_info, repository_id, filter, project=None, project_id=None)
 ```
 
 
@@ -2715,7 +2715,7 @@ Creating, updating, or deleting refs(branches).
 * `:param str project_id: ID or name of the team project. Optional if specifying an ID for repository.`
 #### Example usage:
 ```
-connection.clients.get_git_client().update_refs(ref_updates,repository_id,project,project_id)
+connection.clients.get_git_client().update_refs(ref_updates, repository_id, project=None, project_id=None)
 ```
 
 
@@ -2732,7 +2732,7 @@ Updates the Git repository with either a new repo name or a new default branch.
 ```
 from azure.devops.v5_1.git.models import GitRepository
 
-connection.clients.get_git_client().update_repository(new_repository_info,repository_id,project)
+connection.clients.get_git_client().update_repository(new_repository_info, repository_id, project=None)
 ```
 
 
@@ -2751,7 +2751,7 @@ Update a thread in a pull request.
 ```
 from azure.devops.v5_1.git.models import GitPullRequestCommentThread
 
-connection.clients.get_git_client().update_thread(comment_thread,repository_id,pull_request_id,thread_id,project)
+connection.clients.get_git_client().update_thread(comment_thread, repository_id, pull_request_id, thread_id, project=None)
 ```
 
 
@@ -2804,7 +2804,7 @@ connection.clients.get_identity_client().delete_group(group_id)
 * `:param str scope_id:`
 #### Example usage:
 ```
-connection.clients.get_identity_client().get_identity_changes(identity_sequence_id,group_sequence_id,organization_identity_sequence_id,page_size,scope_id)
+connection.clients.get_identity_client().get_identity_changes(identity_sequence_id, group_sequence_id, organization_identity_sequence_id=None, page_size=None, scope_id=None)
 ```
 
 
@@ -2853,7 +2853,7 @@ connection.clients.get_identity_client().get_user_identity_ids_by_domain_id(doma
 * `:param str properties:`
 #### Example usage:
 ```
-connection.clients.get_identity_client().list_groups(scope_ids,recurse,deleted,properties)
+connection.clients.get_identity_client().list_groups(scope_ids=None, recurse=None, deleted=None, properties=None)
 ```
 
 
@@ -2873,7 +2873,7 @@ connection.clients.get_identity_client().list_groups(scope_ids,recurse,deleted,p
 * `:param str options:`
 #### Example usage:
 ```
-connection.clients.get_identity_client().read_identities(descriptors,identity_ids,subject_descriptors,social_descriptors,search_filter,filter_value,query_membership,properties,include_restricted_visibility,options)
+connection.clients.get_identity_client().read_identities(descriptors=None, identity_ids=None, subject_descriptors=None, social_descriptors=None, search_filter=None, filter_value=None, query_membership=None, properties=None, include_restricted_visibility=None, options=None)
 ```
 
 
@@ -2886,7 +2886,7 @@ connection.clients.get_identity_client().read_identities(descriptors,identity_id
 * `:param str properties:`
 #### Example usage:
 ```
-connection.clients.get_identity_client().read_identities_by_scope(scope_id,query_membership,properties)
+connection.clients.get_identity_client().read_identities_by_scope(scope_id, query_membership=None, properties=None)
 ```
 
 
@@ -2899,7 +2899,7 @@ connection.clients.get_identity_client().read_identities_by_scope(scope_id,query
 * `:param str properties:`
 #### Example usage:
 ```
-connection.clients.get_identity_client().read_identity(identity_id,query_membership,properties)
+connection.clients.get_identity_client().read_identity(identity_id, query_membership=None, properties=None)
 ```
 
 
@@ -2926,7 +2926,7 @@ connection.clients.get_identity_client().update_identities(identities)
 ```
 from azure.devops.v5_1.identity.models import Identity
 
-connection.clients.get_identity_client().update_identity(identity,identity_id)
+connection.clients.get_identity_client().update_identity(identity, identity_id)
 ```
 
 
@@ -3005,7 +3005,7 @@ Get a notification subscription by its ID.
 * `:param str query_flags:`
 #### Example usage:
 ```
-connection.clients.get_notification_client().get_subscription(subscription_id,query_flags)
+connection.clients.get_notification_client().get_subscription(subscription_id, query_flags=None)
 ```
 
 
@@ -3043,7 +3043,7 @@ List available event types for this service. Optionally filter by only event typ
 * `:param str publisher_id: Limit to event types for this publisher`
 #### Example usage:
 ```
-connection.clients.get_notification_client().list_event_types(publisher_id)
+connection.clients.get_notification_client().list_event_types(publisher_id=None)
 ```
 
 
@@ -3059,7 +3059,7 @@ Get a list of diagnostic logs for this service.
 * `:param datetime end_time: End time for the time range to query in.`
 #### Example usage:
 ```
-connection.clients.get_notification_client().list_logs(source,entry_id,start_time,end_time)
+connection.clients.get_notification_client().list_logs(source, entry_id=None, start_time=None, end_time=None)
 ```
 
 
@@ -3074,7 +3074,7 @@ Get a list of notification subscriptions, either by subscription IDs or by all s
 * `:param str query_flags:`
 #### Example usage:
 ```
-connection.clients.get_notification_client().list_subscriptions(target_id,ids,query_flags)
+connection.clients.get_notification_client().list_subscriptions(target_id=None, ids=None, query_flags=None)
 ```
 
 
@@ -3118,7 +3118,7 @@ Update delivery preferences of a notifications subscriber.
 ```
 from azure.devops.v5_1.notification.models import NotificationSubscriberUpdateParameters
 
-connection.clients.get_notification_client().update_subscriber(update_parameters,subscriber_id)
+connection.clients.get_notification_client().update_subscriber(update_parameters, subscriber_id)
 ```
 
 
@@ -3134,7 +3134,7 @@ Update an existing subscription. Depending on the type of subscription and permi
 ```
 from azure.devops.v5_1.notification.models import NotificationSubscriptionUpdateParameters
 
-connection.clients.get_notification_client().update_subscription(update_parameters,subscription_id)
+connection.clients.get_notification_client().update_subscription(update_parameters, subscription_id)
 ```
 
 
@@ -3150,7 +3150,7 @@ Update the diagnostics settings for a subscription.
 ```
 from azure.devops.v5_1.notification.models import UpdateSubscripitonDiagnosticsParameters
 
-connection.clients.get_notification_client().update_subscription_diagnostics(update_parameters,subscription_id)
+connection.clients.get_notification_client().update_subscription_diagnostics(update_parameters, subscription_id)
 ```
 
 
@@ -3167,7 +3167,7 @@ Update the specified user's settings for the specified subscription. This API is
 ```
 from azure.devops.v5_1.notification.models import SubscriptionUserSettings
 
-connection.clients.get_notification_client().update_subscription_user_settings(user_settings,subscription_id,user_id)
+connection.clients.get_notification_client().update_subscription_user_settings(user_settings, subscription_id, user_id)
 ```
 
 
@@ -3182,7 +3182,7 @@ Gets an operation from the the operationId using the given pluginId.
 * `:param str plugin_id: The ID for the plugin.`
 #### Example usage:
 ```
-connection.clients.get_operations_client().get_operation(operation_id,plugin_id)
+connection.clients.get_operations_client().get_operation(operation_id, plugin_id=None)
 ```
 
 
@@ -3200,7 +3200,7 @@ Create a policy configuration of a given policy type.
 ```
 from azure.devops.v5_1.policy.models import PolicyConfiguration
 
-connection.clients.get_policy_client().create_policy_configuration(configuration,project,configuration_id)
+connection.clients.get_policy_client().create_policy_configuration(configuration, project, configuration_id=None)
 ```
 
 
@@ -3214,7 +3214,7 @@ Delete a policy configuration by its ID.
 * `:param int configuration_id: ID of the policy configuration to delete.`
 #### Example usage:
 ```
-connection.clients.get_policy_client().delete_policy_configuration(project,configuration_id)
+connection.clients.get_policy_client().delete_policy_configuration(project, configuration_id)
 ```
 
 
@@ -3228,7 +3228,7 @@ Get a policy configuration by its ID.
 * `:param int configuration_id: ID of the policy configuration`
 #### Example usage:
 ```
-connection.clients.get_policy_client().get_policy_configuration(project,configuration_id)
+connection.clients.get_policy_client().get_policy_configuration(project, configuration_id)
 ```
 
 
@@ -3243,7 +3243,7 @@ Retrieve a specific revision of a given policy by ID.
 * `:param int revision_id: The revision ID.`
 #### Example usage:
 ```
-connection.clients.get_policy_client().get_policy_configuration_revision(project,configuration_id,revision_id)
+connection.clients.get_policy_client().get_policy_configuration_revision(project, configuration_id, revision_id)
 ```
 
 
@@ -3259,7 +3259,7 @@ Retrieve all revisions for a given policy.
 * `:param int skip: The number of revisions to ignore. For example, to retrieve results 101-150, set top to 50 and skip to 100.`
 #### Example usage:
 ```
-connection.clients.get_policy_client().get_policy_configuration_revisions(project,configuration_id,top,skip)
+connection.clients.get_policy_client().get_policy_configuration_revisions(project, configuration_id, top=None, skip=None)
 ```
 
 
@@ -3276,7 +3276,7 @@ Get a list of policy configurations in a project.
 * `:param str policy_type: Filter returned policies to only this type`
 #### Example usage:
 ```
-connection.clients.get_policy_client().get_policy_configurations(project,scope,top,continuation_token,policy_type)
+connection.clients.get_policy_client().get_policy_configurations(project, scope=None, top=None, continuation_token=None, policy_type=None)
 ```
 
 
@@ -3290,7 +3290,7 @@ Retrieve a specific policy type by ID.
 * `:param str type_id: The policy ID.`
 #### Example usage:
 ```
-connection.clients.get_policy_client().get_policy_type(project,type_id)
+connection.clients.get_policy_client().get_policy_type(project, type_id)
 ```
 
 
@@ -3320,7 +3320,7 @@ Update a policy configuration by its ID.
 ```
 from azure.devops.v5_1.policy.models import PolicyConfiguration
 
-connection.clients.get_policy_client().update_policy_configuration(configuration,project,configuration_id)
+connection.clients.get_policy_client().update_policy_configuration(configuration, project, configuration_id)
 ```
 
 
@@ -3338,7 +3338,7 @@ Create a policy configuration of a given policy type.
 ```
 from azure.devops.v5_1.policy.models import PolicyConfiguration
 
-connection.clients.get_profile_client().create_policy_configuration(configuration,project,configuration_id)
+connection.clients.get_profile_client().create_policy_configuration(configuration, project, configuration_id=None)
 ```
 
 
@@ -3352,7 +3352,7 @@ Delete a policy configuration by its ID.
 * `:param int configuration_id: ID of the policy configuration to delete.`
 #### Example usage:
 ```
-connection.clients.get_profile_client().delete_policy_configuration(project,configuration_id)
+connection.clients.get_profile_client().delete_policy_configuration(project, configuration_id)
 ```
 
 
@@ -3366,7 +3366,7 @@ Get a policy configuration by its ID.
 * `:param int configuration_id: ID of the policy configuration`
 #### Example usage:
 ```
-connection.clients.get_profile_client().get_policy_configuration(project,configuration_id)
+connection.clients.get_profile_client().get_policy_configuration(project, configuration_id)
 ```
 
 
@@ -3381,7 +3381,7 @@ Retrieve a specific revision of a given policy by ID.
 * `:param int revision_id: The revision ID.`
 #### Example usage:
 ```
-connection.clients.get_profile_client().get_policy_configuration_revision(project,configuration_id,revision_id)
+connection.clients.get_profile_client().get_policy_configuration_revision(project, configuration_id, revision_id)
 ```
 
 
@@ -3397,7 +3397,7 @@ Retrieve all revisions for a given policy.
 * `:param int skip: The number of revisions to ignore. For example, to retrieve results 101-150, set top to 50 and skip to 100.`
 #### Example usage:
 ```
-connection.clients.get_profile_client().get_policy_configuration_revisions(project,configuration_id,top,skip)
+connection.clients.get_profile_client().get_policy_configuration_revisions(project, configuration_id, top=None, skip=None)
 ```
 
 
@@ -3414,7 +3414,7 @@ Get a list of policy configurations in a project.
 * `:param str policy_type: Filter returned policies to only this type`
 #### Example usage:
 ```
-connection.clients.get_profile_client().get_policy_configurations(project,scope,top,continuation_token,policy_type)
+connection.clients.get_profile_client().get_policy_configurations(project, scope=None, top=None, continuation_token=None, policy_type=None)
 ```
 
 
@@ -3428,7 +3428,7 @@ Retrieve a specific policy type by ID.
 * `:param str type_id: The policy ID.`
 #### Example usage:
 ```
-connection.clients.get_profile_client().get_policy_type(project,type_id)
+connection.clients.get_profile_client().get_policy_type(project, type_id)
 ```
 
 
@@ -3458,7 +3458,7 @@ Update a policy configuration by its ID.
 ```
 from azure.devops.v5_1.policy.models import PolicyConfiguration
 
-connection.clients.get_profile_client().update_policy_configuration(configuration,project,configuration_id)
+connection.clients.get_profile_client().update_policy_configuration(configuration, project, configuration_id)
 ```
 
 
@@ -3475,7 +3475,7 @@ Create a release.
 ```
 from azure.devops.v5_1.release.models import ReleaseStartMetadata
 
-connection.clients.get_release_client().create_release(release_start_metadata,project)
+connection.clients.get_release_client().create_release(release_start_metadata, project)
 ```
 
 
@@ -3491,7 +3491,7 @@ Create a release definition
 ```
 from azure.devops.v5_1.release.models import ReleaseDefinition
 
-connection.clients.get_release_client().create_release_definition(release_definition,project)
+connection.clients.get_release_client().create_release_definition(release_definition, project)
 ```
 
 
@@ -3507,7 +3507,7 @@ Delete a release definition.
 * `:param bool force_delete: 'true' to automatically cancel any in-progress release deployments and proceed with release definition deletion . Default is 'false'.`
 #### Example usage:
 ```
-connection.clients.get_release_client().delete_release_definition(project,definition_id,comment,force_delete)
+connection.clients.get_release_client().delete_release_definition(project, definition_id, comment=None, force_delete=None)
 ```
 
 
@@ -3528,7 +3528,7 @@ Get a list of approvals
 * `:param bool include_my_group_approvals: 'true' to include my group approvals. Default is 'false'.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_approvals(project,assigned_to_filter,status_filter,release_ids_filter,type_filter,top,continuation_token,query_order,include_my_group_approvals)
+connection.clients.get_release_client().get_approvals(project, assigned_to_filter=None, status_filter=None, release_ids_filter=None, type_filter=None, top=None, continuation_token=None, query_order=None, include_my_group_approvals=None)
 ```
 
 
@@ -3554,7 +3554,7 @@ connection.clients.get_release_client().get_approvals(project,assigned_to_filter
 * `:param str source_branch:`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_deployments(project,definition_id,definition_environment_id,created_by,min_modified_time,max_modified_time,deployment_status,operation_status,latest_attempts_only,query_order,top,continuation_token,created_for,min_started_time,max_started_time,source_branch)
+connection.clients.get_release_client().get_deployments(project, definition_id=None, definition_environment_id=None, created_by=None, min_modified_time=None, max_modified_time=None, deployment_status=None, operation_status=None, latest_attempts_only=None, query_order=None, top=None, continuation_token=None, created_for=None, min_started_time=None, max_started_time=None, source_branch=None)
 ```
 
 
@@ -3569,7 +3569,7 @@ Get manual intervention for a given release and manual intervention id.
 * `:param int manual_intervention_id: Id of the manual intervention.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_manual_intervention(project,release_id,manual_intervention_id)
+connection.clients.get_release_client().get_manual_intervention(project, release_id, manual_intervention_id)
 ```
 
 
@@ -3583,7 +3583,7 @@ List all manual interventions for a given release.
 * `:param int release_id: Id of the release.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_manual_interventions(project,release_id)
+connection.clients.get_release_client().get_manual_interventions(project, release_id)
 ```
 
 
@@ -3601,7 +3601,7 @@ Get a Release
 * `:param int top_gate_records: Number of release gate records to get. Default is 5.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_release(project,release_id,approval_filters,property_filters,expand,top_gate_records)
+connection.clients.get_release_client().get_release(project, release_id, approval_filters=None, property_filters=None, expand=None, top_gate_records=None)
 ```
 
 
@@ -3616,7 +3616,7 @@ Get a release definition.
 * `:param [str] property_filters: A comma-delimited list of extended properties to be retrieved. If set, the returned Release Definition will contain values for the specified property Ids (if they exist). If not set, properties will not be included.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_release_definition(project,definition_id,property_filters)
+connection.clients.get_release_client().get_release_definition(project, definition_id, property_filters=None)
 ```
 
 
@@ -3643,7 +3643,7 @@ Get a list of release definitions.
 * `:param bool search_text_contains_folder_name: 'true' to get the release definitions under the folder with name as specified in searchText. Default is 'false'.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_release_definitions(project,search_text,expand,artifact_type,artifact_source_id,top,continuation_token,query_order,path,is_exact_name_match,tag_filter,property_filters,definition_id_filter,is_deleted,search_text_contains_folder_name)
+connection.clients.get_release_client().get_release_definitions(project, search_text=None, expand=None, artifact_type=None, artifact_source_id=None, top=None, continuation_token=None, query_order=None, path=None, is_exact_name_match=None, tag_filter=None, property_filters=None, definition_id_filter=None, is_deleted=None, search_text_contains_folder_name=None)
 ```
 
 
@@ -3658,7 +3658,7 @@ Get release for a given revision number.
 * `:param int definition_snapshot_revision: Definition snapshot revision number.`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_release_revision(project,release_id,definition_snapshot_revision)
+connection.clients.get_release_client().get_release_revision(project, release_id, definition_snapshot_revision, **kwargs)
 ```
 
 
@@ -3692,7 +3692,7 @@ Get a list of releases
 * `:param str path: Releases under this folder path will be returned`
 #### Example usage:
 ```
-connection.clients.get_release_client().get_releases(project,definition_id,definition_environment_id,search_text,created_by,status_filter,environment_status_filter,min_created_time,max_created_time,query_order,top,continuation_token,expand,artifact_type_id,source_id,artifact_version_id,source_branch_filter,is_deleted,tag_filter,property_filters,release_id_filter,path)
+connection.clients.get_release_client().get_releases(project=None, definition_id=None, definition_environment_id=None, search_text=None, created_by=None, status_filter=None, environment_status_filter=None, min_created_time=None, max_created_time=None, query_order=None, top=None, continuation_token=None, expand=None, artifact_type_id=None, source_id=None, artifact_version_id=None, source_branch_filter=None, is_deleted=None, tag_filter=None, property_filters=None, release_id_filter=None, path=None)
 ```
 
 
@@ -3710,7 +3710,7 @@ Update manual intervention.
 ```
 from azure.devops.v5_1.release.models import ManualInterventionUpdateMetadata
 
-connection.clients.get_release_client().update_manual_intervention(manual_intervention_update_metadata,project,release_id,manual_intervention_id)
+connection.clients.get_release_client().update_manual_intervention(manual_intervention_update_metadata, project, release_id, manual_intervention_id)
 ```
 
 
@@ -3727,7 +3727,7 @@ Update a complete release object.
 ```
 from azure.devops.v5_1.release.models import Release
 
-connection.clients.get_release_client().update_release(release,project,release_id)
+connection.clients.get_release_client().update_release(release, project, release_id)
 ```
 
 
@@ -3744,7 +3744,7 @@ Update status of an approval
 ```
 from azure.devops.v5_1.release.models import ReleaseApproval
 
-connection.clients.get_release_client().update_release_approval(approval,project,approval_id)
+connection.clients.get_release_client().update_release_approval(approval, project, approval_id)
 ```
 
 
@@ -3760,7 +3760,7 @@ Update a release definition.
 ```
 from azure.devops.v5_1.release.models import ReleaseDefinition
 
-connection.clients.get_release_client().update_release_definition(release_definition,project)
+connection.clients.get_release_client().update_release_definition(release_definition, project)
 ```
 
 
@@ -3777,7 +3777,7 @@ Update few properties of a release.
 ```
 from azure.devops.v5_1.release.models import ReleaseUpdateMetadata
 
-connection.clients.get_release_client().update_release_resource(release_update_metadata,project,release_id)
+connection.clients.get_release_client().update_release_resource(release_update_metadata, project, release_id)
 ```
 
 
@@ -3795,7 +3795,7 @@ Evaluates whether the caller has the specified permissions on the specified set 
 * `:param str delimiter: Optional security token separator. Defaults to ",".`
 #### Example usage:
 ```
-connection.clients.get_security_client().has_permissions(security_namespace_id,permissions,tokens,always_allow_administrators,delimiter)
+connection.clients.get_security_client().has_permissions(security_namespace_id, permissions=None, tokens=None, always_allow_administrators=None, delimiter=None)
 ```
 
 
@@ -3827,7 +3827,7 @@ Return a list of access control lists for the specified security namespace and t
 * `:param bool recurse: If true and this is a hierarchical namespace, return child ACLs of the specified token.`
 #### Example usage:
 ```
-connection.clients.get_security_client().query_access_control_lists(security_namespace_id,token,descriptors,include_extended_info,recurse)
+connection.clients.get_security_client().query_access_control_lists(security_namespace_id, token=None, descriptors=None, include_extended_info=None, recurse=None)
 ```
 
 
@@ -3841,7 +3841,7 @@ List all security namespaces or just the specified namespace.
 * `:param bool local_only: If true, retrieve only local security namespaces.`
 #### Example usage:
 ```
-connection.clients.get_security_client().query_security_namespaces(security_namespace_id,local_only)
+connection.clients.get_security_client().query_security_namespaces(security_namespace_id=None, local_only=None)
 ```
 
 
@@ -3856,7 +3856,7 @@ Remove the specified ACEs from the ACL belonging to the specified token.
 * `:param str descriptors: String containing a list of identity descriptors separated by ',' whose entries should be removed.`
 #### Example usage:
 ```
-connection.clients.get_security_client().remove_access_control_entries(security_namespace_id,token,descriptors)
+connection.clients.get_security_client().remove_access_control_entries(security_namespace_id, token=None, descriptors=None)
 ```
 
 
@@ -3871,7 +3871,7 @@ Remove access control lists under the specfied security namespace.
 * `:param bool recurse: If true and this is a hierarchical namespace, also remove child ACLs of the specified tokens.`
 #### Example usage:
 ```
-connection.clients.get_security_client().remove_access_control_lists(security_namespace_id,tokens,recurse)
+connection.clients.get_security_client().remove_access_control_lists(security_namespace_id, tokens=None, recurse=None)
 ```
 
 
@@ -3887,7 +3887,7 @@ Removes the specified permissions on a security token for a user or group.
 * `:param str token: Security token to remove permissions for.`
 #### Example usage:
 ```
-connection.clients.get_security_client().remove_permission(security_namespace_id,descriptor,permissions,token)
+connection.clients.get_security_client().remove_permission(security_namespace_id, descriptor, permissions=None, token=None)
 ```
 
 
@@ -3903,7 +3903,7 @@ Add or update ACEs in the ACL for the provided token. The request body contains 
 ```
 from azure.devops.v5_1.security.models import object
 
-connection.clients.get_security_client().set_access_control_entries(container,security_namespace_id)
+connection.clients.get_security_client().set_access_control_entries(container, security_namespace_id)
 ```
 
 
@@ -3919,7 +3919,7 @@ Create or update one or more access control lists. All data that currently exist
 ```
 from azure.devops.v5_1.security.models import VssJsonCollectionWrapper
 
-connection.clients.get_security_client().set_access_control_lists(access_control_lists,security_namespace_id)
+connection.clients.get_security_client().set_access_control_lists(access_control_lists, security_namespace_id)
 ```
 
 
@@ -3966,7 +3966,7 @@ Sends a test notification. This is useful for verifying the configuration of an 
 ```
 from azure.devops.v5_1.service_hooks.models import Notification
 
-connection.clients.get_service_hooks_client().create_test_notification(test_notification,use_real_data)
+connection.clients.get_service_hooks_client().create_test_notification(test_notification, use_real_data=None)
 ```
 
 
@@ -3993,7 +3993,7 @@ Get a specific consumer service. Optionally filter out consumer actions that do 
 * `:param str publisher_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().get_consumer(consumer_id,publisher_id)
+connection.clients.get_service_hooks_client().get_consumer(consumer_id, publisher_id=None)
 ```
 
 
@@ -4008,7 +4008,7 @@ Get details about a specific consumer action.
 * `:param str publisher_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().get_consumer_action(consumer_id,consumer_action_id,publisher_id)
+connection.clients.get_service_hooks_client().get_consumer_action(consumer_id, consumer_action_id, publisher_id=None)
 ```
 
 
@@ -4022,7 +4022,7 @@ Get a specific event type.
 * `:param str event_type_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().get_event_type(publisher_id,event_type_id)
+connection.clients.get_service_hooks_client().get_event_type(publisher_id, event_type_id)
 ```
 
 
@@ -4036,7 +4036,7 @@ Get a specific notification for a subscription.
 * `:param int notification_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().get_notification(subscription_id,notification_id)
+connection.clients.get_service_hooks_client().get_notification(subscription_id, notification_id)
 ```
 
 
@@ -4052,7 +4052,7 @@ Get a list of notifications for a specific subscription. A notification includes
 * `:param str result: Get only notifications with this result type.`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().get_notifications(subscription_id,max_results,status,result)
+connection.clients.get_service_hooks_client().get_notifications(subscription_id, max_results=None, status=None, result=None)
 ```
 
 
@@ -4092,7 +4092,7 @@ Get a list of consumer actions for a specific consumer.
 * `:param str publisher_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().list_consumer_actions(consumer_id,publisher_id)
+connection.clients.get_service_hooks_client().list_consumer_actions(consumer_id, publisher_id=None)
 ```
 
 
@@ -4105,7 +4105,7 @@ Get a list of available service hook consumer services. Optionally filter by con
 * `:param str publisher_id:`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().list_consumers(publisher_id)
+connection.clients.get_service_hooks_client().list_consumers(publisher_id=None)
 ```
 
 
@@ -4146,7 +4146,7 @@ Get a list of subscriptions.
 * `:param str consumer_action_id: ID for a consumerActionId.`
 #### Example usage:
 ```
-connection.clients.get_service_hooks_client().list_subscriptions(publisher_id,event_type,consumer_id,consumer_action_id)
+connection.clients.get_service_hooks_client().list_subscriptions(publisher_id=None, event_type=None, consumer_id=None, consumer_action_id=None)
 ```
 
 
@@ -4160,7 +4160,7 @@ connection.clients.get_service_hooks_client().list_subscriptions(publisher_id,ev
 ```
 from azure.devops.v5_1.service_hooks.models import InputValuesQuery
 
-connection.clients.get_service_hooks_client().query_input_values(input_values_query,publisher_id)
+connection.clients.get_service_hooks_client().query_input_values(input_values_query, publisher_id)
 ```
 
 
@@ -4206,7 +4206,7 @@ Update a subscription. <param name="subscriptionId">ID for a subscription that y
 ```
 from azure.devops.v5_1.service_hooks.models import Subscription
 
-connection.clients.get_service_hooks_client().replace_subscription(subscription,subscription_id)
+connection.clients.get_service_hooks_client().replace_subscription(subscription, subscription_id=None)
 ```
 
 
@@ -4223,7 +4223,7 @@ Adds an agent to a pool.  You probably don't want to call this endpoint directly
 ```
 from azure.devops.v5_1.task_agent.models import TaskAgent
 
-connection.clients.get_task_agent_client().add_agent(agent,pool_id)
+connection.clients.get_task_agent_client().add_agent(agent, pool_id)
 ```
 
 
@@ -4252,7 +4252,7 @@ Delete an agent.  You probably don't want to call this endpoint directly. Instea
 * `:param int agent_id: The agent ID to remove`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().delete_agent(pool_id,agent_id)
+connection.clients.get_task_agent_client().delete_agent(pool_id, agent_id)
 ```
 
 
@@ -4283,7 +4283,7 @@ Get information about an agent.
 * `:param [str] property_filters: Filter which custom properties will be returned`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().get_agent(pool_id,agent_id,include_capabilities,include_assigned_request,include_last_completed_request,property_filters)
+connection.clients.get_task_agent_client().get_agent(pool_id, agent_id, include_capabilities=None, include_assigned_request=None, include_last_completed_request=None, property_filters=None)
 ```
 
 
@@ -4298,7 +4298,7 @@ Get information about an agent pool.
 * `:param str action_filter: Filter by whether the calling user has use or manage permissions`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().get_agent_pool(pool_id,properties,action_filter)
+connection.clients.get_task_agent_client().get_agent_pool(pool_id, properties=None, action_filter=None)
 ```
 
 
@@ -4314,7 +4314,7 @@ Get a list of agent pools.
 * `:param str action_filter: Filter by whether the calling user has use or manage permissions`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().get_agent_pools(pool_name,properties,pool_type,action_filter)
+connection.clients.get_task_agent_client().get_agent_pools(pool_name=None, properties=None, pool_type=None, action_filter=None)
 ```
 
 
@@ -4328,7 +4328,7 @@ Get a list of agent pools.
 * `:param str action_filter: Filter by whether the calling user has use or manage permissions`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().get_agent_pools_by_ids(pool_ids,action_filter)
+connection.clients.get_task_agent_client().get_agent_pools_by_ids(pool_ids, action_filter=None)
 ```
 
 
@@ -4347,7 +4347,7 @@ Get a list of agents.
 * `:param [str] demands: Filter by demands the agents can satisfy`
 #### Example usage:
 ```
-connection.clients.get_task_agent_client().get_agents(pool_id,agent_name,include_capabilities,include_assigned_request,include_last_completed_request,property_filters,demands)
+connection.clients.get_task_agent_client().get_agents(pool_id, agent_name=None, include_capabilities=None, include_assigned_request=None, include_last_completed_request=None, property_filters=None, demands=None)
 ```
 
 
@@ -4374,7 +4374,7 @@ Replace an agent.  You probably don't want to call this endpoint directly. Inste
 ```
 from azure.devops.v5_1.task_agent.models import TaskAgent
 
-connection.clients.get_task_agent_client().replace_agent(agent,pool_id,agent_id)
+connection.clients.get_task_agent_client().replace_agent(agent, pool_id, agent_id)
 ```
 
 
@@ -4391,7 +4391,7 @@ Update agent details.
 ```
 from azure.devops.v5_1.task_agent.models import TaskAgent
 
-connection.clients.get_task_agent_client().update_agent(agent,pool_id,agent_id)
+connection.clients.get_task_agent_client().update_agent(agent, pool_id, agent_id)
 ```
 
 
@@ -4407,7 +4407,7 @@ Update properties on an agent pool
 ```
 from azure.devops.v5_1.task_agent.models import TaskAgentPool
 
-connection.clients.get_task_agent_client().update_agent_pool(pool,pool_id)
+connection.clients.get_task_agent_client().update_agent_pool(pool, pool_id)
 ```
 
 
@@ -4423,7 +4423,7 @@ connection.clients.get_task_agent_client().update_agent_pool(pool,pool_id)
 * `:param int log_id:`
 #### Example usage:
 ```
-connection.clients.get_task_client().append_log_content(upload_stream,scope_identifier,hub_name,plan_id,log_id)
+connection.clients.get_task_client().append_log_content(upload_stream, scope_identifier, hub_name, plan_id, log_id, **kwargs)
 ```
 
 
@@ -4439,7 +4439,7 @@ connection.clients.get_task_client().append_log_content(upload_stream,scope_iden
 ```
 from azure.devops.v5_1.task.models import TaskLog
 
-connection.clients.get_task_client().create_log(log,scope_identifier,hub_name,plan_id)
+connection.clients.get_task_client().create_log(log, scope_identifier, hub_name, plan_id)
 ```
 
 
@@ -4455,7 +4455,7 @@ connection.clients.get_task_client().create_log(log,scope_identifier,hub_name,pl
 ```
 from azure.devops.v5_1.task.models import Timeline
 
-connection.clients.get_task_client().create_timeline(timeline,scope_identifier,hub_name,plan_id)
+connection.clients.get_task_client().create_timeline(timeline, scope_identifier, hub_name, plan_id)
 ```
 
 
@@ -4469,7 +4469,7 @@ connection.clients.get_task_client().create_timeline(timeline,scope_identifier,h
 * `:param str timeline_id:`
 #### Example usage:
 ```
-connection.clients.get_task_client().delete_timeline(scope_identifier,hub_name,plan_id,timeline_id)
+connection.clients.get_task_client().delete_timeline(scope_identifier, hub_name, plan_id, timeline_id)
 ```
 
 
@@ -4485,7 +4485,7 @@ connection.clients.get_task_client().delete_timeline(scope_identifier,hub_name,p
 * `:param long end_line:`
 #### Example usage:
 ```
-connection.clients.get_task_client().get_log(scope_identifier,hub_name,plan_id,log_id,start_line,end_line)
+connection.clients.get_task_client().get_log(scope_identifier, hub_name, plan_id, log_id, start_line=None, end_line=None)
 ```
 
 
@@ -4498,7 +4498,7 @@ connection.clients.get_task_client().get_log(scope_identifier,hub_name,plan_id,l
 * `:param str plan_id:`
 #### Example usage:
 ```
-connection.clients.get_task_client().get_logs(scope_identifier,hub_name,plan_id)
+connection.clients.get_task_client().get_logs(scope_identifier, hub_name, plan_id)
 ```
 
 
@@ -4513,7 +4513,7 @@ connection.clients.get_task_client().get_logs(scope_identifier,hub_name,plan_id)
 * `:param int change_id:`
 #### Example usage:
 ```
-connection.clients.get_task_client().get_records(scope_identifier,hub_name,plan_id,timeline_id,change_id)
+connection.clients.get_task_client().get_records(scope_identifier, hub_name, plan_id, timeline_id, change_id=None)
 ```
 
 
@@ -4529,7 +4529,7 @@ connection.clients.get_task_client().get_records(scope_identifier,hub_name,plan_
 * `:param bool include_records:`
 #### Example usage:
 ```
-connection.clients.get_task_client().get_timeline(scope_identifier,hub_name,plan_id,timeline_id,change_id,include_records)
+connection.clients.get_task_client().get_timeline(scope_identifier, hub_name, plan_id, timeline_id, change_id=None, include_records=None)
 ```
 
 
@@ -4542,7 +4542,7 @@ connection.clients.get_task_client().get_timeline(scope_identifier,hub_name,plan
 * `:param str plan_id:`
 #### Example usage:
 ```
-connection.clients.get_task_client().get_timelines(scope_identifier,hub_name,plan_id)
+connection.clients.get_task_client().get_timelines(scope_identifier, hub_name, plan_id)
 ```
 
 
@@ -4559,7 +4559,7 @@ connection.clients.get_task_client().get_timelines(scope_identifier,hub_name,pla
 ```
 from azure.devops.v5_1.task.models import VssJsonCollectionWrapper
 
-connection.clients.get_task_client().update_records(records,scope_identifier,hub_name,plan_id,timeline_id)
+connection.clients.get_task_client().update_records(records, scope_identifier, hub_name, plan_id, timeline_id)
 ```
 
 
@@ -4576,7 +4576,7 @@ Add test cases to suite.
 * `:param str test_case_ids: IDs of the test cases to add to the suite. Ids are specified in comma separated format.`
 #### Example usage:
 ```
-connection.clients.get_test_client().add_test_cases_to_suite(project,plan_id,suite_id,test_case_ids)
+connection.clients.get_test_client().add_test_cases_to_suite(project, plan_id, suite_id, test_case_ids)
 ```
 
 
@@ -4591,7 +4591,7 @@ Add test results to a test run.
 * `:param int run_id: Test run ID into which test results to add.`
 #### Example usage:
 ```
-connection.clients.get_test_client().add_test_results_to_test_run(results,project,run_id)
+connection.clients.get_test_client().add_test_results_to_test_run(results, project, run_id)
 ```
 
 
@@ -4607,7 +4607,7 @@ Create new test run.
 ```
 from azure.devops.v5_1.test.models import RunCreateModel
 
-connection.clients.get_test_client().create_test_run(test_run,project)
+connection.clients.get_test_client().create_test_run(test_run, project)
 ```
 
 
@@ -4621,7 +4621,7 @@ Delete a test run by its ID.
 * `:param int run_id: ID of the run to delete.`
 #### Example usage:
 ```
-connection.clients.get_test_client().delete_test_run(project,run_id)
+connection.clients.get_test_client().delete_test_run(project, run_id)
 ```
 
 
@@ -4638,7 +4638,7 @@ Gets the action results for an iteration in a test result.
 * `:param str action_path: Path of a specific action, used to get just that action.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_action_results(project,run_id,test_case_result_id,iteration_id,action_path)
+connection.clients.get_test_client().get_action_results(project, run_id, test_case_result_id, iteration_id, action_path=None)
 ```
 
 
@@ -4655,7 +4655,7 @@ Get a test point.
 * `:param str wit_fields: Comma-separated list of work item field names.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_point(project,plan_id,suite_id,point_ids,wit_fields)
+connection.clients.get_test_client().get_point(project, plan_id, suite_id, point_ids, wit_fields=None)
 ```
 
 
@@ -4677,7 +4677,7 @@ Get a list of test points.
 * `:param int top: Number of test points to return.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_points(project,plan_id,suite_id,wit_fields,configuration_id,test_case_id,test_point_ids,include_point_details,skip,top)
+connection.clients.get_test_client().get_points(project, plan_id, suite_id, wit_fields=None, configuration_id=None, test_case_id=None, test_point_ids=None, include_point_details=None, skip=None, top=None)
 ```
 
 
@@ -4694,7 +4694,7 @@ Get a list of parameterized results
 * `:param str param_name: Name of the parameter.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_result_parameters(project,run_id,test_case_result_id,iteration_id,param_name)
+connection.clients.get_test_client().get_result_parameters(project, run_id, test_case_result_id, iteration_id, param_name=None)
 ```
 
 
@@ -4710,7 +4710,7 @@ Get a specific test case in a test suite with test case id.
 * `:param int test_case_ids: ID of the test case to get.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_case_by_id(project,plan_id,suite_id,test_case_ids)
+connection.clients.get_test_client().get_test_case_by_id(project, plan_id, suite_id, test_case_ids)
 ```
 
 
@@ -4725,7 +4725,7 @@ Get all test cases in a suite.
 * `:param int suite_id: ID of the suite to get.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_cases(project,plan_id,suite_id)
+connection.clients.get_test_client().get_test_cases(project, plan_id, suite_id)
 ```
 
 
@@ -4742,7 +4742,7 @@ Get iteration for a result
 * `:param bool include_action_results: Include result details for each action performed in the test iteration. ActionResults refer to outcome (pass/fail) of test steps that are executed as part of a running a manual test. Including the ActionResults flag gets the outcome of test steps in the actionResults section and test parameters in the parameters section for each test iteration.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_iteration(project,run_id,test_case_result_id,iteration_id,include_action_results)
+connection.clients.get_test_client().get_test_iteration(project, run_id, test_case_result_id, iteration_id, include_action_results=None)
 ```
 
 
@@ -4758,7 +4758,7 @@ Get iterations for a result
 * `:param bool include_action_results: Include result details for each action performed in the test iteration. ActionResults refer to outcome (pass/fail) of test steps that are executed as part of a running a manual test. Including the ActionResults flag gets the outcome of test steps in the actionResults section and test parameters in the parameters section for each test iteration.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_iterations(project,run_id,test_case_result_id,include_action_results)
+connection.clients.get_test_client().get_test_iterations(project, run_id, test_case_result_id, include_action_results=None)
 ```
 
 
@@ -4774,7 +4774,7 @@ Get a test result for a test run.
 * `:param str details_to_include: Details to include with test results. Default is None. Other values are Iterations, WorkItems and SubResults.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_result_by_id(project,run_id,test_case_result_id,details_to_include)
+connection.clients.get_test_client().get_test_result_by_id(project, run_id, test_case_result_id, details_to_include=None)
 ```
 
 
@@ -4792,7 +4792,7 @@ Get test results for a test run.
 * `:param [TestOutcome] outcomes: Comma separated list of test outcomes to filter test results.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_results(project,run_id,details_to_include,skip,top,outcomes)
+connection.clients.get_test_client().get_test_results(project, run_id, details_to_include=None, skip=None, top=None, outcomes=None)
 ```
 
 
@@ -4807,7 +4807,7 @@ Get a test run by its ID.
 * `:param bool include_details: Default value is true. It includes details like run statistics, release, build, test environment, post process state, and more.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_run_by_id(project,run_id,include_details)
+connection.clients.get_test_client().get_test_run_by_id(project, run_id, include_details=None)
 ```
 
 
@@ -4821,7 +4821,7 @@ Get test run statistics , used when we want to get summary of a run by outcome.
 * `:param int run_id: ID of the run to get.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_run_statistics(project,run_id)
+connection.clients.get_test_client().get_test_run_statistics(project, run_id)
 ```
 
 
@@ -4842,7 +4842,7 @@ Get a list of test runs.
 * `:param int top: Number of test runs to return.`
 #### Example usage:
 ```
-connection.clients.get_test_client().get_test_runs(project,build_uri,owner,tmi_run_id,plan_id,include_run_details,automated,skip,top)
+connection.clients.get_test_client().get_test_runs(project, build_uri=None, owner=None, tmi_run_id=None, plan_id=None, include_run_details=None, automated=None, skip=None, top=None)
 ```
 
 
@@ -4871,7 +4871,7 @@ Query Test Runs based on filters. Mandatory fields are minLastUpdatedDate and ma
 * `:param str continuation_token: continuationToken received from previous batch or null for first batch. It is not supposed to be created (or altered, if received from last batch) by user.`
 #### Example usage:
 ```
-connection.clients.get_test_client().query_test_runs(project,min_last_updated_date,max_last_updated_date,state,plan_ids,is_automated,publish_context,build_ids,build_def_ids,branch_name,release_ids,release_def_ids,release_env_ids,release_env_def_ids,run_title,top,continuation_token)
+connection.clients.get_test_client().query_test_runs(project, min_last_updated_date, max_last_updated_date, state=None, plan_ids=None, is_automated=None, publish_context=None, build_ids=None, build_def_ids=None, branch_name=None, release_ids=None, release_def_ids=None, release_env_ids=None, release_env_def_ids=None, run_title=None, top=None, continuation_token=None)
 ```
 
 
@@ -4887,7 +4887,7 @@ The test points associated with the test cases are removed from the test suite. 
 * `:param str test_case_ids: IDs of the test cases to remove from the suite.`
 #### Example usage:
 ```
-connection.clients.get_test_client().remove_test_cases_from_suite_url(project,plan_id,suite_id,test_case_ids)
+connection.clients.get_test_client().remove_test_cases_from_suite_url(project, plan_id, suite_id, test_case_ids)
 ```
 
 
@@ -4906,7 +4906,7 @@ Updates the properties of the test case association in a suite.
 ```
 from azure.devops.v5_1.test.models import SuiteTestCaseUpdateModel
 
-connection.clients.get_test_client().update_suite_test_cases(suite_test_case_update_model,project,plan_id,suite_id,test_case_ids)
+connection.clients.get_test_client().update_suite_test_cases(suite_test_case_update_model, project, plan_id, suite_id, test_case_ids)
 ```
 
 
@@ -4925,7 +4925,7 @@ Update test points.
 ```
 from azure.devops.v5_1.test.models import PointUpdateModel
 
-connection.clients.get_test_client().update_test_points(point_update_model,project,plan_id,suite_id,point_ids)
+connection.clients.get_test_client().update_test_points(point_update_model, project, plan_id, suite_id, point_ids)
 ```
 
 
@@ -4940,7 +4940,7 @@ Update test results in a test run.
 * `:param int run_id: Test run ID whose test results to update.`
 #### Example usage:
 ```
-connection.clients.get_test_client().update_test_results(results,project,run_id)
+connection.clients.get_test_client().update_test_results(results, project, run_id)
 ```
 
 
@@ -4957,7 +4957,7 @@ Update test run by its ID.
 ```
 from azure.devops.v5_1.test.models import RunUpdateModel
 
-connection.clients.get_test_client().update_test_run(run_update_model,project,run_id)
+connection.clients.get_test_client().update_test_run(run_update_model, project, run_id)
 ```
 
 
@@ -4986,7 +4986,7 @@ Get test run statistics , used when we want to get summary of a run by outcome.
 * `:param int run_id: ID of the run to get.`
 #### Example usage:
 ```
-connection.clients.get_test_results_client().get_test_run_statistics(project,run_id)
+connection.clients.get_test_results_client().get_test_run_statistics(project, run_id)
 ```
 
 
@@ -5003,7 +5003,7 @@ Create a new changeset.
 ```
 from azure.devops.v5_1.tfvc.models import TfvcChangeset
 
-connection.clients.get_tfvc_client().create_changeset(changeset,project)
+connection.clients.get_tfvc_client().create_changeset(changeset, project=None)
 ```
 
 
@@ -5034,7 +5034,7 @@ Get a single branch hierarchy at the given path with parents or children as spec
 * `:param bool include_children: Return child branches, if there are any. Default: False`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_branch(path,project,include_parent,include_children)
+connection.clients.get_tfvc_client().get_branch(path, project=None, include_parent=None, include_children=None)
 ```
 
 
@@ -5050,7 +5050,7 @@ Get branch hierarchies below the specified scopePath
 * `:param bool include_links: Return links. Default: False`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_branch_refs(scope_path,project,include_deleted,include_links)
+connection.clients.get_tfvc_client().get_branch_refs(scope_path, project=None, include_deleted=None, include_links=None)
 ```
 
 
@@ -5067,7 +5067,7 @@ Get a collection of branch roots -- first-level children, branches with no paren
 * `:param bool include_links: Return links. Default: False`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_branches(project,include_parent,include_children,include_deleted,include_links)
+connection.clients.get_tfvc_client().get_branches(project=None, include_parent=None, include_children=None, include_deleted=None, include_links=None)
 ```
 
 
@@ -5092,7 +5092,7 @@ Retrieve a Tfvc Changeset
 ```
 from azure.devops.v5_1.tfvc.models import TfvcChangesetSearchCriteria
 
-connection.clients.get_tfvc_client().get_changeset(id,project,max_change_count,include_details,include_work_items,max_comment_length,include_source_rename,skip,top,orderby,search_criteria)
+connection.clients.get_tfvc_client().get_changeset(id, project=None, max_change_count=None, include_details=None, include_work_items=None, max_comment_length=None, include_source_rename=None, skip=None, top=None, orderby=None, search_criteria=None)
 ```
 
 
@@ -5108,7 +5108,7 @@ Retrieve Tfvc changes for a given changeset.
 * `:param str continuation_token: Return the next page of results. Default: null`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_changeset_changes(id,skip,top,continuation_token)
+connection.clients.get_tfvc_client().get_changeset_changes(id=None, skip=None, top=None, continuation_token=None)
 ```
 
 
@@ -5121,7 +5121,7 @@ Retrieves the work items associated with a particular changeset.
 * `:param int id: ID of the changeset. Default: null`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_changeset_work_items(id)
+connection.clients.get_tfvc_client().get_changeset_work_items(id=None)
 ```
 
 
@@ -5141,7 +5141,7 @@ Retrieve Tfvc Changesets
 ```
 from azure.devops.v5_1.tfvc.models import TfvcChangesetSearchCriteria
 
-connection.clients.get_tfvc_client().get_changesets(project,max_comment_length,skip,top,orderby,search_criteria)
+connection.clients.get_tfvc_client().get_changesets(project=None, max_comment_length=None, skip=None, top=None, orderby=None, search_criteria=None)
 ```
 
 
@@ -5163,7 +5163,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.tfvc.models import TfvcVersionDescriptor
 
-connection.clients.get_tfvc_client().get_item(path,project,file_name,download,scope_path,recursion_level,version_descriptor,include_content)
+connection.clients.get_tfvc_client().get_item(path, project=None, file_name=None, download=None, scope_path=None, recursion_level=None, version_descriptor=None, include_content=None)
 ```
 
 
@@ -5185,7 +5185,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.tfvc.models import TfvcVersionDescriptor
 
-connection.clients.get_tfvc_client().get_item_content(path,project,file_name,download,scope_path,recursion_level,version_descriptor,include_content)
+connection.clients.get_tfvc_client().get_item_content(path, project=None, file_name=None, download=None, scope_path=None, recursion_level=None, version_descriptor=None, include_content=None, **kwargs)
 ```
 
 
@@ -5207,7 +5207,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.tfvc.models import TfvcVersionDescriptor
 
-connection.clients.get_tfvc_client().get_item_text(path,project,file_name,download,scope_path,recursion_level,version_descriptor,include_content)
+connection.clients.get_tfvc_client().get_item_text(path, project=None, file_name=None, download=None, scope_path=None, recursion_level=None, version_descriptor=None, include_content=None, **kwargs)
 ```
 
 
@@ -5229,7 +5229,7 @@ Get Item Metadata and/or Content for a single item. The download parameter is to
 ```
 from azure.devops.v5_1.tfvc.models import TfvcVersionDescriptor
 
-connection.clients.get_tfvc_client().get_item_zip(path,project,file_name,download,scope_path,recursion_level,version_descriptor,include_content)
+connection.clients.get_tfvc_client().get_item_zip(path, project=None, file_name=None, download=None, scope_path=None, recursion_level=None, version_descriptor=None, include_content=None, **kwargs)
 ```
 
 
@@ -5248,7 +5248,7 @@ Get a list of Tfvc items
 ```
 from azure.devops.v5_1.tfvc.models import TfvcVersionDescriptor
 
-connection.clients.get_tfvc_client().get_items(project,scope_path,recursion_level,include_links,version_descriptor)
+connection.clients.get_tfvc_client().get_items(project=None, scope_path=None, recursion_level=None, include_links=None, version_descriptor=None)
 ```
 
 
@@ -5264,7 +5264,7 @@ Post for retrieving a set of items given a list of paths or a long path. Allows 
 ```
 from azure.devops.v5_1.tfvc.models import TfvcItemRequestData
 
-connection.clients.get_tfvc_client().get_items_batch(item_request_data,project)
+connection.clients.get_tfvc_client().get_items_batch(item_request_data, project=None)
 ```
 
 
@@ -5280,7 +5280,7 @@ Post for retrieving a set of items given a list of paths or a long path. Allows 
 ```
 from azure.devops.v5_1.tfvc.models import TfvcItemRequestData
 
-connection.clients.get_tfvc_client().get_items_batch_zip(item_request_data,project)
+connection.clients.get_tfvc_client().get_items_batch_zip(item_request_data, project=None, **kwargs)
 ```
 
 
@@ -5297,7 +5297,7 @@ Get a single deep label.
 ```
 from azure.devops.v5_1.tfvc.models import TfvcLabelRequestData
 
-connection.clients.get_tfvc_client().get_label(label_id,request_data,project)
+connection.clients.get_tfvc_client().get_label(label_id, request_data, project=None)
 ```
 
 
@@ -5312,7 +5312,7 @@ Get items under a label.
 * `:param int skip: Number of items to skip`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_label_items(label_id,top,skip)
+connection.clients.get_tfvc_client().get_label_items(label_id, top=None, skip=None)
 ```
 
 
@@ -5330,7 +5330,7 @@ Get a collection of shallow label references.
 ```
 from azure.devops.v5_1.tfvc.models import TfvcLabelRequestData
 
-connection.clients.get_tfvc_client().get_labels(request_data,project,top,skip)
+connection.clients.get_tfvc_client().get_labels(request_data, project=None, top=None, skip=None)
 ```
 
 
@@ -5346,7 +5346,7 @@ Get a single deep shelveset.
 ```
 from azure.devops.v5_1.tfvc.models import TfvcShelvesetRequestData
 
-connection.clients.get_tfvc_client().get_shelveset(shelveset_id,request_data)
+connection.clients.get_tfvc_client().get_shelveset(shelveset_id, request_data=None)
 ```
 
 
@@ -5361,7 +5361,7 @@ Get changes included in a shelveset.
 * `:param int skip: Number of changes to skip`
 #### Example usage:
 ```
-connection.clients.get_tfvc_client().get_shelveset_changes(shelveset_id,top,skip)
+connection.clients.get_tfvc_client().get_shelveset_changes(shelveset_id, top=None, skip=None)
 ```
 
 
@@ -5391,7 +5391,7 @@ Return a collection of shallow shelveset references.
 ```
 from azure.devops.v5_1.tfvc.models import TfvcShelvesetRequestData
 
-connection.clients.get_tfvc_client().get_shelvesets(request_data,top,skip)
+connection.clients.get_tfvc_client().get_shelvesets(request_data=None, top=None, skip=None)
 ```
 
 
@@ -5411,7 +5411,7 @@ Creates an attachment in the wiki.
 ```
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().create_attachment(upload_stream,project,wiki_identifier,name,version_descriptor)
+connection.clients.get_wiki_client().create_attachment(upload_stream, project, wiki_identifier, name, version_descriptor=None, **kwargs)
 ```
 
 
@@ -5433,7 +5433,7 @@ Creates or edits a wiki page.
 from azure.devops.v5_1.wiki.models import WikiPageCreateOrUpdateParameters
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().create_or_update_page(parameters,project,wiki_identifier,path,version,comment,version_descriptor)
+connection.clients.get_wiki_client().create_or_update_page(parameters, project, wiki_identifier, path, version, comment=None, version_descriptor=None)
 ```
 
 
@@ -5453,7 +5453,7 @@ Creates a page move operation that updates the path and order of the page as pro
 from azure.devops.v5_1.wiki.models import WikiPageMoveParameters
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().create_page_move(page_move_parameters,project,wiki_identifier,comment,version_descriptor)
+connection.clients.get_wiki_client().create_page_move(page_move_parameters, project, wiki_identifier, comment=None, version_descriptor=None)
 ```
 
 
@@ -5469,7 +5469,7 @@ Creates the wiki resource.
 ```
 from azure.devops.v5_1.wiki.models import WikiCreateParametersV2
 
-connection.clients.get_wiki_client().create_wiki(wiki_create_params,project)
+connection.clients.get_wiki_client().create_wiki(wiki_create_params, project=None)
 ```
 
 
@@ -5488,7 +5488,7 @@ Deletes a wiki page.
 ```
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().delete_page(project,wiki_identifier,path,comment,version_descriptor)
+connection.clients.get_wiki_client().delete_page(project, wiki_identifier, path, comment=None, version_descriptor=None)
 ```
 
 
@@ -5502,7 +5502,7 @@ Deletes the wiki corresponding to the wiki name or Id provided.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_wiki_client().delete_wiki(wiki_identifier,project)
+connection.clients.get_wiki_client().delete_wiki(wiki_identifier, project=None)
 ```
 
 
@@ -5515,7 +5515,7 @@ Gets all wikis in a project or collection.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_wiki_client().get_all_wikis(project)
+connection.clients.get_wiki_client().get_all_wikis(project=None)
 ```
 
 
@@ -5535,7 +5535,7 @@ Gets metadata or content of the wiki page for the provided path. Content negotia
 ```
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().get_page(project,wiki_identifier,path,recursion_level,version_descriptor,include_content)
+connection.clients.get_wiki_client().get_page(project, wiki_identifier, path=None, recursion_level=None, version_descriptor=None, include_content=None)
 ```
 
 
@@ -5555,7 +5555,7 @@ Gets metadata or content of the wiki page for the provided path. Content negotia
 ```
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().get_page_text(project,wiki_identifier,path,recursion_level,version_descriptor,include_content)
+connection.clients.get_wiki_client().get_page_text(project, wiki_identifier, path=None, recursion_level=None, version_descriptor=None, include_content=None, **kwargs)
 ```
 
 
@@ -5575,7 +5575,7 @@ Gets metadata or content of the wiki page for the provided path. Content negotia
 ```
 from azure.devops.v5_1.wiki.models import GitVersionDescriptor
 
-connection.clients.get_wiki_client().get_page_zip(project,wiki_identifier,path,recursion_level,version_descriptor,include_content)
+connection.clients.get_wiki_client().get_page_zip(project, wiki_identifier, path=None, recursion_level=None, version_descriptor=None, include_content=None, **kwargs)
 ```
 
 
@@ -5589,7 +5589,7 @@ Gets the wiki corresponding to the wiki name or Id provided.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_wiki_client().get_wiki(wiki_identifier,project)
+connection.clients.get_wiki_client().get_wiki(wiki_identifier, project=None)
 ```
 
 
@@ -5606,7 +5606,7 @@ Updates the wiki corresponding to the wiki Id or name provided using the update 
 ```
 from azure.devops.v5_1.wiki.models import WikiUpdateParameters
 
-connection.clients.get_wiki_client().update_wiki(update_parameters,wiki_identifier,project)
+connection.clients.get_wiki_client().update_wiki(update_parameters, wiki_identifier, project=None)
 ```
 
 
@@ -5623,7 +5623,7 @@ Add a new plan for the team
 ```
 from azure.devops.v5_1.work.models import CreatePlan
 
-connection.clients.get_work_client().create_plan(posted_plan,project)
+connection.clients.get_work_client().create_plan(posted_plan, project)
 ```
 
 
@@ -5637,7 +5637,7 @@ Delete the specified plan
 * `:param str id: Identifier of the plan`
 #### Example usage:
 ```
-connection.clients.get_work_client().delete_plan(project,id)
+connection.clients.get_work_client().delete_plan(project, id)
 ```
 
 
@@ -5653,7 +5653,7 @@ Delete a team's iteration by iterationId
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().delete_team_iteration(team_context,id)
+connection.clients.get_work_client().delete_team_iteration(team_context, id)
 ```
 
 
@@ -5684,7 +5684,7 @@ Get board
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board(team_context,id)
+connection.clients.get_work_client().get_board(team_context, id)
 ```
 
 
@@ -5700,7 +5700,7 @@ Get board card Rule settings for the board id or board by name
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_card_rule_settings(team_context,board)
+connection.clients.get_work_client().get_board_card_rule_settings(team_context, board)
 ```
 
 
@@ -5716,7 +5716,7 @@ Get board card settings for the board id or board by name
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_card_settings(team_context,board)
+connection.clients.get_work_client().get_board_card_settings(team_context, board)
 ```
 
 
@@ -5733,7 +5733,7 @@ Get a board chart
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_chart(team_context,board,name)
+connection.clients.get_work_client().get_board_chart(team_context, board, name)
 ```
 
 
@@ -5749,7 +5749,7 @@ Get board charts
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_charts(team_context,board)
+connection.clients.get_work_client().get_board_charts(team_context, board)
 ```
 
 
@@ -5765,7 +5765,7 @@ Get columns on a board
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_columns(team_context,board)
+connection.clients.get_work_client().get_board_columns(team_context, board)
 ```
 
 
@@ -5781,7 +5781,7 @@ Get rows on a board
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_board_rows(team_context,board)
+connection.clients.get_work_client().get_board_rows(team_context, board)
 ```
 
 
@@ -5812,7 +5812,7 @@ Get a team's capacity
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_capacities_with_identity_ref(team_context,iteration_id)
+connection.clients.get_work_client().get_capacities_with_identity_ref(team_context, iteration_id)
 ```
 
 
@@ -5829,7 +5829,7 @@ Get a team member's capacity
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_capacity_with_identity_ref(team_context,iteration_id,team_member_id)
+connection.clients.get_work_client().get_capacity_with_identity_ref(team_context, iteration_id, team_member_id)
 ```
 
 
@@ -5842,7 +5842,7 @@ Get available board columns in a project
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_client().get_column_suggested_values(project)
+connection.clients.get_work_client().get_column_suggested_values(project=None)
 ```
 
 
@@ -5859,7 +5859,7 @@ Get Delivery View Data
 * `:param datetime end_date: The end date of timeline`
 #### Example usage:
 ```
-connection.clients.get_work_client().get_delivery_timeline_data(project,id,revision,start_date,end_date)
+connection.clients.get_work_client().get_delivery_timeline_data(project, id, revision=None, start_date=None, end_date=None)
 ```
 
 
@@ -5873,7 +5873,7 @@ Get the information for the specified plan
 * `:param str id: Identifier of the plan`
 #### Example usage:
 ```
-connection.clients.get_work_client().get_plan(project,id)
+connection.clients.get_work_client().get_plan(project, id)
 ```
 
 
@@ -5899,7 +5899,7 @@ Get available board rows in a project
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_client().get_row_suggested_values(project)
+connection.clients.get_work_client().get_row_suggested_values(project=None)
 ```
 
 
@@ -5915,7 +5915,7 @@ Get team's days off for an iteration
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_team_days_off(team_context,iteration_id)
+connection.clients.get_work_client().get_team_days_off(team_context, iteration_id)
 ```
 
 
@@ -5946,7 +5946,7 @@ Get team's iteration by iterationId
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_team_iteration(team_context,id)
+connection.clients.get_work_client().get_team_iteration(team_context, id)
 ```
 
 
@@ -5962,7 +5962,7 @@ Get a team's iterations using timeframe filter
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().get_team_iterations(team_context,timeframe)
+connection.clients.get_work_client().get_team_iterations(team_context, timeframe=None)
 ```
 
 
@@ -5994,7 +5994,7 @@ Add an iteration to the team
 from azure.devops.v5_1.work.models import TeamSettingsIteration
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().post_team_iteration(iteration,team_context)
+connection.clients.get_work_client().post_team_iteration(iteration, team_context)
 ```
 
 
@@ -6011,7 +6011,7 @@ Replace a team's capacity
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().replace_capacities_with_identity_ref(capacities,team_context,iteration_id)
+connection.clients.get_work_client().replace_capacities_with_identity_ref(capacities, team_context, iteration_id)
 ```
 
 
@@ -6028,7 +6028,7 @@ Update board options
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().set_board_options(options,team_context,id)
+connection.clients.get_work_client().set_board_options(options, team_context, id)
 ```
 
 
@@ -6046,7 +6046,7 @@ Update board card Rule settings for the board id or board by name
 from azure.devops.v5_1.work.models import BoardCardRuleSettings
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_board_card_rule_settings(board_card_rule_settings,team_context,board)
+connection.clients.get_work_client().update_board_card_rule_settings(board_card_rule_settings, team_context, board)
 ```
 
 
@@ -6064,7 +6064,7 @@ Update board card settings for the board id or board by name
 from azure.devops.v5_1.work.models import BoardCardSettings
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_board_card_settings(board_card_settings_to_save,team_context,board)
+connection.clients.get_work_client().update_board_card_settings(board_card_settings_to_save, team_context, board)
 ```
 
 
@@ -6083,7 +6083,7 @@ Update a board chart
 from azure.devops.v5_1.work.models import BoardChart
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_board_chart(chart,team_context,board,name)
+connection.clients.get_work_client().update_board_chart(chart, team_context, board, name)
 ```
 
 
@@ -6100,7 +6100,7 @@ Update columns on a board
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_board_columns(board_columns,team_context,board)
+connection.clients.get_work_client().update_board_columns(board_columns, team_context, board)
 ```
 
 
@@ -6117,7 +6117,7 @@ Update rows on a board
 ```
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_board_rows(board_rows,team_context,board)
+connection.clients.get_work_client().update_board_rows(board_rows, team_context, board)
 ```
 
 
@@ -6136,7 +6136,7 @@ Update a team member's capacity
 from azure.devops.v5_1.work.models import CapacityPatch
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_capacity_with_identity_ref(patch,team_context,iteration_id,team_member_id)
+connection.clients.get_work_client().update_capacity_with_identity_ref(patch, team_context, iteration_id, team_member_id)
 ```
 
 
@@ -6153,7 +6153,7 @@ Update the information for the specified plan
 ```
 from azure.devops.v5_1.work.models import UpdatePlan
 
-connection.clients.get_work_client().update_plan(updated_plan,project,id)
+connection.clients.get_work_client().update_plan(updated_plan, project, id)
 ```
 
 
@@ -6171,7 +6171,7 @@ Set a team's days off for an iteration
 from azure.devops.v5_1.work.models import TeamSettingsDaysOffPatch
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_team_days_off(days_off_patch,team_context,iteration_id)
+connection.clients.get_work_client().update_team_days_off(days_off_patch, team_context, iteration_id)
 ```
 
 
@@ -6188,7 +6188,7 @@ Update team field values
 from azure.devops.v5_1.work.models import TeamFieldValuesPatch
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_team_field_values(patch,team_context)
+connection.clients.get_work_client().update_team_field_values(patch, team_context)
 ```
 
 
@@ -6205,7 +6205,7 @@ Update a team's settings
 from azure.devops.v5_1.work.models import TeamSettingsPatch
 from azure.devops.v5_1.work.models import TeamContext
 
-connection.clients.get_work_client().update_team_settings(team_settings_patch,team_context)
+connection.clients.get_work_client().update_team_settings(team_settings_patch, team_context)
 ```
 
 
@@ -6223,7 +6223,7 @@ Uploads an attachment.
 * `:param str area_path: Target project Area Path`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().create_attachment(upload_stream,project,file_name,upload_type,area_path)
+connection.clients.get_work_item_tracking_client().create_attachment(upload_stream, project=None, file_name=None, upload_type=None, area_path=None, **kwargs)
 ```
 
 
@@ -6239,7 +6239,7 @@ Create a new field.
 ```
 from azure.devops.v5_1.work_item_tracking.models import WorkItemField
 
-connection.clients.get_work_item_tracking_client().create_field(work_item_field,project)
+connection.clients.get_work_item_tracking_client().create_field(work_item_field, project=None)
 ```
 
 
@@ -6257,7 +6257,7 @@ Create new or update an existing classification node.
 ```
 from azure.devops.v5_1.work_item_tracking.models import WorkItemClassificationNode
 
-connection.clients.get_work_item_tracking_client().create_or_update_classification_node(posted_node,project,structure_group,path)
+connection.clients.get_work_item_tracking_client().create_or_update_classification_node(posted_node, project, structure_group, path=None)
 ```
 
 
@@ -6275,7 +6275,7 @@ Creates a query, or moves a query.
 ```
 from azure.devops.v5_1.work_item_tracking.models import QueryHierarchyItem
 
-connection.clients.get_work_item_tracking_client().create_query(posted_query,project,query,validate_wiql_only)
+connection.clients.get_work_item_tracking_client().create_query(posted_query, project, query, validate_wiql_only=None)
 ```
 
 
@@ -6296,7 +6296,7 @@ Creates a single work item.
 ```
 from azure.devops.v5_1.work_item_tracking.models import [JsonPatchOperation]
 
-connection.clients.get_work_item_tracking_client().create_work_item(document,project,type,validate_only,bypass_rules,suppress_notifications,expand)
+connection.clients.get_work_item_tracking_client().create_work_item(document, project, type, validate_only=None, bypass_rules=None, suppress_notifications=None, expand=None)
 ```
 
 
@@ -6312,7 +6312,7 @@ Delete an existing classification node.
 * `:param int reclassify_id: Id of the target classification node for reclassification.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().delete_classification_node(project,structure_group,path,reclassify_id)
+connection.clients.get_work_item_tracking_client().delete_classification_node(project, structure_group, path=None, reclassify_id=None)
 ```
 
 
@@ -6326,7 +6326,7 @@ Deletes the field.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().delete_field(field_name_or_ref_name,project)
+connection.clients.get_work_item_tracking_client().delete_field(field_name_or_ref_name, project=None)
 ```
 
 
@@ -6340,7 +6340,7 @@ Delete a query or a folder. This deletes any permission change on the deleted qu
 * `:param str query: ID or path of the query or folder to delete.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().delete_query(project,query)
+connection.clients.get_work_item_tracking_client().delete_query(project, query)
 ```
 
 
@@ -6355,7 +6355,7 @@ Deletes the specified work item and sends it to the Recycle Bin, so that it can 
 * `:param bool destroy: Optional parameter, if set to true, the work item is deleted permanently. Please note: the destroy action is PERMANENT and cannot be undone.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().delete_work_item(id,project,destroy)
+connection.clients.get_work_item_tracking_client().delete_work_item(id, project=None, destroy=None)
 ```
 
 
@@ -6369,7 +6369,7 @@ Destroys the specified work item permanently from the Recycle Bin. This action c
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().destroy_work_item(id,project)
+connection.clients.get_work_item_tracking_client().destroy_work_item(id, project=None)
 ```
 
 
@@ -6385,7 +6385,7 @@ Downloads an attachment.
 * `:param bool download: If set to <c>true</c> always download attachment`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_attachment_content(id,project,file_name,download)
+connection.clients.get_work_item_tracking_client().get_attachment_content(id, project=None, file_name=None, download=None, **kwargs)
 ```
 
 
@@ -6401,7 +6401,7 @@ Downloads an attachment.
 * `:param bool download: If set to <c>true</c> always download attachment`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_attachment_zip(id,project,file_name,download)
+connection.clients.get_work_item_tracking_client().get_attachment_zip(id, project=None, file_name=None, download=None, **kwargs)
 ```
 
 
@@ -6417,7 +6417,7 @@ Gets the classification node for a given node path.
 * `:param int depth: Depth of children to fetch.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_classification_node(project,structure_group,path,depth)
+connection.clients.get_work_item_tracking_client().get_classification_node(project, structure_group, path=None, depth=None)
 ```
 
 
@@ -6433,7 +6433,7 @@ Gets root classification nodes or list of classification nodes for a given list 
 * `:param str error_policy: Flag to handle errors in getting some nodes. Possible options are Fail and Omit.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_classification_nodes(project,ids,depth,error_policy)
+connection.clients.get_work_item_tracking_client().get_classification_nodes(project, ids, depth=None, error_policy=None)
 ```
 
 
@@ -6447,7 +6447,7 @@ Gets a deleted work item from Recycle Bin.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_deleted_work_item(id,project)
+connection.clients.get_work_item_tracking_client().get_deleted_work_item(id, project=None)
 ```
 
 
@@ -6460,7 +6460,7 @@ Gets a list of the IDs and the URLs of the deleted the work items in the Recycle
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_deleted_work_item_shallow_references(project)
+connection.clients.get_work_item_tracking_client().get_deleted_work_item_shallow_references(project=None)
 ```
 
 
@@ -6474,7 +6474,7 @@ Gets the work items from the recycle bin, whose IDs have been specified in the p
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_deleted_work_items(ids,project)
+connection.clients.get_work_item_tracking_client().get_deleted_work_items(ids, project=None)
 ```
 
 
@@ -6488,7 +6488,7 @@ Gets information on a specific field.
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_field(field_name_or_ref_name,project)
+connection.clients.get_work_item_tracking_client().get_field(field_name_or_ref_name, project=None)
 ```
 
 
@@ -6502,7 +6502,7 @@ Returns information for all fields.
 * `:param str expand: Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_fields(project,expand)
+connection.clients.get_work_item_tracking_client().get_fields(project=None, expand=None)
 ```
 
 
@@ -6518,7 +6518,7 @@ Gets the root queries and their children
 * `:param bool include_deleted: Include deleted queries and folders`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_queries(project,expand,depth,include_deleted)
+connection.clients.get_work_item_tracking_client().get_queries(project, expand=None, depth=None, include_deleted=None)
 ```
 
 
@@ -6534,7 +6534,7 @@ Gets a list of queries by ids (Maximum 1000)
 ```
 from azure.devops.v5_1.work_item_tracking.models import QueryBatchGetRequest
 
-connection.clients.get_work_item_tracking_client().get_queries_batch(query_get_request,project)
+connection.clients.get_work_item_tracking_client().get_queries_batch(query_get_request, project)
 ```
 
 
@@ -6551,7 +6551,7 @@ Retrieves an individual query and its children
 * `:param bool include_deleted: Include deleted queries and folders`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_query(project,query,expand,depth,include_deleted)
+connection.clients.get_work_item_tracking_client().get_query(project, query, expand=None, depth=None, include_deleted=None)
 ```
 
 
@@ -6569,7 +6569,7 @@ Gets the results of the query given the query ID.
 ```
 from azure.devops.v5_1.work_item_tracking.models import TeamContext
 
-connection.clients.get_work_item_tracking_client().get_query_result_count(id,team_context,time_precision,top)
+connection.clients.get_work_item_tracking_client().get_query_result_count(id, team_context=None, time_precision=None, top=None)
 ```
 
 
@@ -6611,7 +6611,7 @@ Get a batch of work item links
 * `:param datetime start_date_time: Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_reporting_links_by_link_type(project,link_types,types,continuation_token,start_date_time)
+connection.clients.get_work_item_tracking_client().get_reporting_links_by_link_type(project=None, link_types=None, types=None, continuation_token=None, start_date_time=None)
 ```
 
 
@@ -6627,7 +6627,7 @@ Returns a fully hydrated work item for the requested revision
 * `:param str expand:`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_revision(id,revision_number,project,expand)
+connection.clients.get_work_item_tracking_client().get_revision(id, revision_number, project=None, expand=None)
 ```
 
 
@@ -6644,7 +6644,7 @@ Returns the list of fully hydrated work item revisions, paged.
 * `:param str expand:`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_revisions(id,project,top,skip,expand)
+connection.clients.get_work_item_tracking_client().get_revisions(id, project=None, top=None, skip=None, expand=None)
 ```
 
 
@@ -6658,7 +6658,7 @@ Gets root classification nodes under the project.
 * `:param int depth: Depth of children to fetch.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_root_nodes(project,depth)
+connection.clients.get_work_item_tracking_client().get_root_nodes(project, depth=None)
 ```
 
 
@@ -6673,7 +6673,7 @@ Returns a single update for a work item
 * `:param str project: Project ID or project name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_update(id,update_number,project)
+connection.clients.get_work_item_tracking_client().get_update(id, update_number, project=None)
 ```
 
 
@@ -6689,7 +6689,7 @@ Returns a the deltas between work item revisions
 * `:param int skip:`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_updates(id,project,top,skip)
+connection.clients.get_work_item_tracking_client().get_updates(id, project=None, top=None, skip=None)
 ```
 
 
@@ -6706,7 +6706,7 @@ Returns a single work item.
 * `:param str expand: The expand parameters for work item attributes. Possible options are { None, Relations, Fields, Links, All }.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item(id,project,fields,as_of,expand)
+connection.clients.get_work_item_tracking_client().get_work_item(id, project=None, fields=None, as_of=None, expand=None)
 ```
 
 
@@ -6721,7 +6721,7 @@ Get a work item icon given the friendly name and icon color.
 * `:param int v: The version of the icon (used only for cache invalidation)`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_icon_json(icon,color,v)
+connection.clients.get_work_item_tracking_client().get_work_item_icon_json(icon, color=None, v=None)
 ```
 
 
@@ -6736,7 +6736,7 @@ Get a work item icon given the friendly name and icon color.
 * `:param int v: The version of the icon (used only for cache invalidation)`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_icon_svg(icon,color,v)
+connection.clients.get_work_item_tracking_client().get_work_item_icon_svg(icon, color=None, v=None, **kwargs)
 ```
 
 
@@ -6751,7 +6751,7 @@ Get a work item icon given the friendly name and icon color.
 * `:param int v: The version of the icon (used only for cache invalidation)`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_icon_xaml(icon,color,v)
+connection.clients.get_work_item_tracking_client().get_work_item_icon_xaml(icon, color=None, v=None, **kwargs)
 ```
 
 
@@ -6780,7 +6780,7 @@ Returns a single work item from a template.
 * `:param str expand: The expand parameters for work item attributes. Possible options are { None, Relations, Fields, Links, All }.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_template(project,type,fields,as_of,expand)
+connection.clients.get_work_item_tracking_client().get_work_item_template(project, type, fields=None, as_of=None, expand=None)
 ```
 
 
@@ -6794,7 +6794,7 @@ Returns a work item type definition.
 * `:param str type: Work item type name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_type(project,type)
+connection.clients.get_work_item_tracking_client().get_work_item_type(project, type)
 ```
 
 
@@ -6821,7 +6821,7 @@ Get specific work item type category by name.
 * `:param str category: The category name`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_type_category(project,category)
+connection.clients.get_work_item_tracking_client().get_work_item_type_category(project, category)
 ```
 
 
@@ -6837,7 +6837,7 @@ Get a field for a work item type with detailed references.
 * `:param str expand: Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_type_field_with_references(project,type,field,expand)
+connection.clients.get_work_item_tracking_client().get_work_item_type_field_with_references(project, type, field, expand=None)
 ```
 
 
@@ -6852,7 +6852,7 @@ Get a list of fields for a work item type with detailed references.
 * `:param str expand: Expand level for the API response. Properties: to include allowedvalues, default value, isRequired etc. as a part of response; None: to skip these properties.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_item_type_fields_with_references(project,type,expand)
+connection.clients.get_work_item_tracking_client().get_work_item_type_fields_with_references(project, type, expand=None)
 ```
 
 
@@ -6883,7 +6883,7 @@ Returns a list of work items (Maximum 200)
 * `:param str error_policy: The flag to control error policy in a bulk get work items request. Possible options are {Fail, Omit}.`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().get_work_items(ids,project,fields,as_of,expand,error_policy)
+connection.clients.get_work_item_tracking_client().get_work_items(ids, project=None, fields=None, as_of=None, expand=None, error_policy=None)
 ```
 
 
@@ -6899,7 +6899,7 @@ Gets work items for a list of work item ids (Maximum 200)
 ```
 from azure.devops.v5_1.work_item_tracking.models import WorkItemBatchGetRequest
 
-connection.clients.get_work_item_tracking_client().get_work_items_batch(work_item_get_request,project)
+connection.clients.get_work_item_tracking_client().get_work_items_batch(work_item_get_request, project=None)
 ```
 
 
@@ -6917,7 +6917,7 @@ Gets the results of the query given the query ID.
 ```
 from azure.devops.v5_1.work_item_tracking.models import TeamContext
 
-connection.clients.get_work_item_tracking_client().query_by_id(id,team_context,time_precision,top)
+connection.clients.get_work_item_tracking_client().query_by_id(id, team_context=None, time_precision=None, top=None)
 ```
 
 
@@ -6936,7 +6936,7 @@ Gets the results of the query given its WIQL.
 from azure.devops.v5_1.work_item_tracking.models import Wiql
 from azure.devops.v5_1.work_item_tracking.models import TeamContext
 
-connection.clients.get_work_item_tracking_client().query_by_wiql(wiql,team_context,time_precision,top)
+connection.clients.get_work_item_tracking_client().query_by_wiql(wiql, team_context=None, time_precision=None, top=None)
 ```
 
 
@@ -6960,7 +6960,7 @@ Get a batch of work item revisions with the option of including deleted items
 * `:param int max_page_size: The maximum number of results to return in this batch`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().read_reporting_revisions_get(project,fields,types,continuation_token,start_date_time,include_identity_ref,include_deleted,include_tag_ref,include_latest_only,expand,include_discussion_changes_only,max_page_size)
+connection.clients.get_work_item_tracking_client().read_reporting_revisions_get(project=None, fields=None, types=None, continuation_token=None, start_date_time=None, include_identity_ref=None, include_deleted=None, include_tag_ref=None, include_latest_only=None, expand=None, include_discussion_changes_only=None, max_page_size=None)
 ```
 
 
@@ -6979,7 +6979,7 @@ Get a batch of work item revisions. This request may be used if your list of fie
 ```
 from azure.devops.v5_1.work_item_tracking.models import ReportingWorkItemRevisionsFilter
 
-connection.clients.get_work_item_tracking_client().read_reporting_revisions_post(filter,project,continuation_token,start_date_time,expand)
+connection.clients.get_work_item_tracking_client().read_reporting_revisions_post(filter, project=None, continuation_token=None, start_date_time=None, expand=None)
 ```
 
 
@@ -6996,7 +6996,7 @@ Restores the deleted work item from Recycle Bin.
 ```
 from azure.devops.v5_1.work_item_tracking.models import WorkItemDeleteUpdate
 
-connection.clients.get_work_item_tracking_client().restore_work_item(payload,id,project)
+connection.clients.get_work_item_tracking_client().restore_work_item(payload, id, project=None)
 ```
 
 
@@ -7013,7 +7013,7 @@ Searches all queries the user has access to in the current project
 * `:param bool include_deleted: Include deleted queries and folders`
 #### Example usage:
 ```
-connection.clients.get_work_item_tracking_client().search_queries(project,filter,top,expand,include_deleted)
+connection.clients.get_work_item_tracking_client().search_queries(project, filter, top=None, expand=None, include_deleted=None)
 ```
 
 
@@ -7031,7 +7031,7 @@ Update an existing classification node.
 ```
 from azure.devops.v5_1.work_item_tracking.models import WorkItemClassificationNode
 
-connection.clients.get_work_item_tracking_client().update_classification_node(posted_node,project,structure_group,path)
+connection.clients.get_work_item_tracking_client().update_classification_node(posted_node, project, structure_group, path=None)
 ```
 
 
@@ -7049,7 +7049,7 @@ Update a query or a folder. This allows you to update, rename and move queries a
 ```
 from azure.devops.v5_1.work_item_tracking.models import QueryHierarchyItem
 
-connection.clients.get_work_item_tracking_client().update_query(query_update,project,query,undelete_descendants)
+connection.clients.get_work_item_tracking_client().update_query(query_update, project, query, undelete_descendants=None)
 ```
 
 
@@ -7070,7 +7070,7 @@ Updates a single work item.
 ```
 from azure.devops.v5_1.work_item_tracking.models import [JsonPatchOperation]
 
-connection.clients.get_work_item_tracking_client().update_work_item(document,id,project,validate_only,bypass_rules,suppress_notifications,expand)
+connection.clients.get_work_item_tracking_client().update_work_item(document, id, project=None, validate_only=None, bypass_rules=None, suppress_notifications=None, expand=None)
 ```
 
 
