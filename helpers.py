@@ -3,6 +3,10 @@ import re
 
 
 def to_dict_recursive(obj, classkey=None):
+    '''
+    Recusively converts DevOps objects to dictionaries.
+    obj: The DevOps object to convert.
+    '''
     if isinstance(obj, dict):
         data = {}
         for (k, v) in obj.items():
@@ -24,6 +28,11 @@ def to_dict_recursive(obj, classkey=None):
 
 
 def flatten_dict(nested_dict, separator='.', prefix=''):
+    '''
+    Recursively flattens a nested dictionary.
+    nested_dict: The nested dictionary to be flattened.
+    separator: The seperator to be used when renaming keys in the flattened dictionary.
+    '''
     return {prefix + separator + k if prefix else k: v
             for kk, vv in nested_dict.items()
             for k, v in flatten_dict(vv, separator, kk).items()
@@ -31,6 +40,11 @@ def flatten_dict(nested_dict, separator='.', prefix=''):
 
 
 def get_methods(obj, hide_special_methods=True):
+    '''
+    Gets the methods for an object.
+    obj: The object to return the methods from.
+    hide_special_methods: Prevents special methods from being returned.  Defaults to True.
+    '''
     try:
         methods = dir(obj)
 
@@ -43,6 +57,11 @@ def get_methods(obj, hide_special_methods=True):
 
 
 def get_arguments(obj, method):
+    '''
+    Gets the arguments for a method.
+    obj: The object to return the methods from.
+    method: The method to return arguments from.
+    '''
     try:
         arguments = inspect.signature(getattr(obj, method)).parameters  # .args
         arguments = [str(v) for k, v in arguments.items()]
@@ -52,7 +71,13 @@ def get_arguments(obj, method):
     return arguments
 
 
-def create_docs(obj, client_name, output_markup=False):
+def create_docs(obj, client_name, output_markdown=False):
+    '''
+    A function to return details about an object.  Returns a nested dictionary by default.
+    obj: The object to return methods from.
+    client_name: The name of the DevOps client object targeted.
+    output_markdown: Returns pre-formatted markdown for the object when True.
+    '''
 
     methods = get_methods(obj)
     docs = {}

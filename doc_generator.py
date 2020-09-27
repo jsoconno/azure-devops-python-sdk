@@ -99,7 +99,7 @@ for client in clients:
     try:
         current_client = getattr(connection.clients, client)()
         documentation += create_docs(current_client,
-                                     client, output_markup=True)
+                                     client, output_markdown=True)
     except Exception as e:
         print(e)
 
