@@ -15,7 +15,7 @@ clients = get_methods(connection.clients)
 
 header_content = '''
 # Azure DevOps SDK for Python
-This repo is documents all of python-sdk clients as well as their methods and attributes.  It was created to help those looking to get started with this development kit by providing more information about each client to a new user and real world examples to help you get started.
+This repo documents all of python-sdk clients as well as their methods and attributes.  It was created to help those looking to get started with this development kit by providing more information about each client to a new user and real world examples to help get things started.
 
 For more information, check out the original repo here:
 https://github.com/microsoft/azure-devops-python-api
