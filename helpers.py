@@ -152,29 +152,29 @@ def create_docs(obj, client_name, output_markdown=False):
             print(e)
             print(line)
 
-    if output_markup:
-        markup = ''
-        markup += f'## {client_name.replace("_", " ").title()}\n\n'
+    if output_markdown:
+        markdown = ''
+        markdown += f'## {client_name.replace("_", " ").title()}\n\n'
 
         for method, attributes in docs.items():
-            markup += f'### {method}\n'
-            markup += f'#### Description:\n'
-            markup += f'{attributes["description"]}\n'
-            markup += f'#### Parameters:\n'
-            markup += f'| Name | Type | Description |\n'
-            markup += f'| --- | --- | --- |\n'
+            markdown += f'### {method}\n'
+            markdown += f'#### Description:\n'
+            markdown += f'{attributes["description"]}\n'
+            markdown += f'#### Parameters:\n'
+            markdown += f'| Name | Type | Description |\n'
+            markdown += f'| --- | --- | --- |\n'
             for parameter, details in attributes['parameters'].items():
-                markup += f'| {parameter} | {details["type"]} | {details["description"]} |\n'
-            markup += f'#### Return Type\n'
-            markup += f'{attributes["return_type"]}\n'
-            markup += f'#### Example Usage\n'
-            markup += f'```\n'
+                markdown += f'| {parameter} | {details["type"]} | {details["description"]} |\n'
+            markdown += f'#### Return Type\n'
+            markdown += f'{attributes["return_type"]}\n'
+            markdown += f'#### Example Usage\n'
+            markdown += f'```\n'
             for i in attributes['imports']:
-                markup += f'{i}\n'
-            markup += f'\n'
-            markup += f'{attributes["example_usage"]}\n'
-            markup += f'```\n'
+                markdown += f'{i}\n'
+            markdown += f'\n'
+            markdown += f'{attributes["example_usage"]}\n'
+            markdown += f'```\n'
 
-        docs = markup
+        docs = markdown
 
     return docs
