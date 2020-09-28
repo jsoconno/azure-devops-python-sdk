@@ -90,7 +90,6 @@ Get a list of accounts for a specific owner or a specific member.
 [Account]
 #### Example Usage
 ```
-
 connection.clients.get_accounts_client().get_accounts(owner_id=None, member_id=None, properties=None)
 ```
 ## Get Build Client
@@ -108,7 +107,6 @@ Adds a tag to a build.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().add_build_tag(project, build_id, tag)
 ```
 ### AddBuildTags
@@ -124,7 +122,6 @@ Adds tags to a build.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().add_build_tags(tags, project, build_id)
 ```
 ### CreateArtifact
@@ -174,7 +171,6 @@ Deletes a build.
 :class:<BuildDefinition> <azure.devops.v5_1.build.models.BuildDefinition>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().delete_build(project, build_id)
 ```
 ### DeleteBuildTag
@@ -190,7 +186,6 @@ Removes a tag from a build.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().delete_build_tag(project, build_id, tag)
 ```
 ### DeleteDefinition
@@ -205,7 +200,6 @@ Deletes a definition and all associated builds.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().delete_definition(project, definition_id)
 ```
 ### DeleteTemplate
@@ -220,7 +214,6 @@ Deletes a build definition template.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().delete_template(project, template_id)
 ```
 ### GetArtifact
@@ -236,7 +229,6 @@ Gets a specific artifact for a build.
 :class:<BuildArtifact> <azure.devops.v5_1.build.models.BuildArtifact>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_artifact(project, build_id, artifact_name)
 ```
 ### GetArtifactContentZip
@@ -252,7 +244,6 @@ Gets a specific artifact for a build.
 object
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_artifact_content_zip(project, build_id, artifact_name, **kwargs)
 ```
 ### GetArtifacts
@@ -267,7 +258,6 @@ Gets all artifacts for a build.
 [BuildArtifact]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_artifacts(project, build_id)
 ```
 ### GetBuild
@@ -283,7 +273,6 @@ Gets a build
 :class:<Build> <azure.devops.v5_1.build.models.Build>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build(project, build_id, property_filters=None)
 ```
 ### GetBuildChanges
@@ -301,7 +290,6 @@ Gets the changes associated with a build
 :class:<GetBuildChangesResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_changes(project, build_id, continuation_token=None, top=None, include_source_change=None)
 ```
 ### GetBuildController
@@ -315,7 +303,6 @@ Gets a controller
 :class:<BuildController> <azure.devops.v5_1.build.models.BuildController>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_controller(controller_id)
 ```
 ### GetBuildControllers
@@ -329,7 +316,6 @@ Gets controller, optionally filtered by name
 [BuildController]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_controllers(name=None)
 ```
 ### GetBuildLog
@@ -347,7 +333,6 @@ Gets an individual log file for a build.
 object
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_log(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 ### GetBuildLogLines
@@ -365,7 +350,6 @@ Gets an individual log file for a build.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_log_lines(project, build_id, log_id, start_line=None, end_line=None)
 ```
 ### GetBuildLogZip
@@ -383,7 +367,6 @@ Gets an individual log file for a build.
 object
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_log_zip(project, build_id, log_id, start_line=None, end_line=None, **kwargs)
 ```
 ### GetBuildLogs
@@ -398,7 +381,6 @@ Gets the logs for a build.
 [BuildLog]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_logs(project, build_id)
 ```
 ### GetBuildLogsZip
@@ -413,7 +395,6 @@ Gets the logs for a build.
 object
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_logs_zip(project, build_id, **kwargs)
 ```
 ### GetBuildOptionDefinitions
@@ -427,7 +408,6 @@ Gets all build definition options supported by the system.
 [BuildOptionDefinition]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_option_definitions(project=None)
 ```
 ### GetBuildSettings
@@ -441,7 +421,6 @@ Gets the build settings.
 :class:<BuildSettings> <azure.devops.v5_1.build.models.BuildSettings>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_settings(project=None)
 ```
 ### GetBuildTags
@@ -456,7 +435,6 @@ Gets the tags for a build.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_tags(project, build_id)
 ```
 ### GetBuildTimeline
@@ -474,7 +452,6 @@ Gets details for a build
 :class:<Timeline> <azure.devops.v5_1.build.models.Timeline>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_timeline(project, build_id, timeline_id=None, change_id=None, plan_id=None)
 ```
 ### GetBuildWorkItemsRefs
@@ -490,7 +467,6 @@ Gets the work items associated with a build.
 [ResourceRef]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_work_items_refs(project, build_id, top=None)
 ```
 ### GetBuildWorkItemsRefsFromCommits
@@ -507,7 +483,6 @@ Gets the work items associated with a build, filtered to specific commits.
 [ResourceRef]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_build_work_items_refs_from_commits(commit_ids, project, build_id, top=None)
 ```
 ### GetBuilds
@@ -541,7 +516,6 @@ Gets a list of builds.
 :class:<GetBuildsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_builds(project, definitions=None, queues=None, build_number=None, min_time=None, max_time=None, requested_for=None, reason_filter=None, status_filter=None, result_filter=None, tag_filters=None, properties=None, top=None, continuation_token=None, max_builds_per_definition=None, deleted_filter=None, query_order=None, branch_name=None, build_ids=None, repository_id=None, repository_type=None)
 ```
 ### GetDefinition
@@ -560,7 +534,6 @@ Gets a definition, optionally at a specific revision.
 :class:<BuildDefinition> <azure.devops.v5_1.build.models.BuildDefinition>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_definition(project, definition_id, revision=None, min_metrics_time=None, property_filters=None, include_latest_builds=None)
 ```
 ### GetDefinitionRevisions
@@ -575,7 +548,6 @@ Gets all revisions of a definition.
 [BuildDefinitionRevision]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_definition_revisions(project, definition_id)
 ```
 ### GetDefinitions
@@ -605,7 +577,6 @@ Gets a list of definitions.
 :class:<GetDefinitionsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_definitions(project, name=None, repository_id=None, repository_type=None, query_order=None, top=None, continuation_token=None, min_metrics_time=None, definition_ids=None, path=None, built_after=None, not_built_after=None, include_all_properties=None, include_latest_builds=None, task_id_filter=None, process_type=None, yaml_filename=None)
 ```
 ### GetFile
@@ -623,7 +594,6 @@ Gets a file from the build.
 object
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_file(project, build_id, artifact_name, file_id, file_name, **kwargs)
 ```
 ### GetTags
@@ -637,7 +607,6 @@ Gets a list of all build and definition tags in the project.
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_tags(project)
 ```
 ### GetTemplate
@@ -652,7 +621,6 @@ Gets a specific build definition template.
 :class:<BuildDefinitionTemplate> <azure.devops.v5_1.build.models.BuildDefinitionTemplate>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_template(project, template_id)
 ```
 ### GetTemplates
@@ -666,7 +634,6 @@ Gets all definition templates.
 [BuildDefinitionTemplate]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().get_templates(project)
 ```
 ### QueueBuild
@@ -701,7 +668,6 @@ Restores a deleted definition
 :class:<BuildDefinition> <azure.devops.v5_1.build.models.BuildDefinition>
 #### Example Usage
 ```
-
 connection.clients.get_build_client().restore_definition(project, definition_id, deleted)
 ```
 ### SaveTemplate
@@ -767,7 +733,6 @@ Updates multiple builds.
 [Build]
 #### Example Usage
 ```
-
 connection.clients.get_build_client().update_builds(builds, project)
 ```
 ### UpdateDefinition
@@ -819,7 +784,6 @@ Delete a team.
 :class:<WebApiTeam> <azure.devops.v5_1.core.models.WebApiTeam>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().delete_team(project_id, team_id)
 ```
 ### GetProcessById
@@ -833,7 +797,6 @@ Get a process by ID.
 :class:<Process> <azure.devops.v5_1.core.models.Process>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_process_by_id(process_id)
 ```
 ### GetProcesses
@@ -846,7 +809,6 @@ Get a list of processes.
 [Process]
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_processes()
 ```
 ### GetProject
@@ -862,7 +824,6 @@ Get project with the specified id or name, optionally including capabilities.
 :class:<TeamProject> <azure.devops.v5_1.core.models.TeamProject>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_project(project_id, include_capabilities=None, include_history=None)
 ```
 ### GetProjectCollection
@@ -876,7 +837,6 @@ Get project collection with the specified id or name.
 :class:<TeamProjectCollection> <azure.devops.v5_1.core.models.TeamProjectCollection>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_project_collection(collection_id)
 ```
 ### GetProjectCollections
@@ -891,7 +851,6 @@ Get project collection references for this application.
 [TeamProjectCollectionReference]
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_project_collections(top=None, skip=None)
 ```
 ### GetProjects
@@ -909,7 +868,6 @@ Get all projects in the organization that the authenticated user has access to.
 :class:<GetProjectsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_projects(state_filter=None, top=None, skip=None, continuation_token=None, get_default_team_image_url=None)
 ```
 ### GetTeam
@@ -925,7 +883,6 @@ Get a specific team.
 :class:<WebApiTeam> <azure.devops.v5_1.core.models.WebApiTeam>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_team(project_id, team_id, expand_identity=None)
 ```
 ### GetTeamMembersWithExtendedProperties
@@ -942,7 +899,6 @@ Get a list of members for a specific team.
 [TeamMember]
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_team_members_with_extended_properties(project_id, team_id, top=None, skip=None)
 ```
 ### GetTeams
@@ -960,7 +916,6 @@ Get a list of teams.
 [WebApiTeam]
 #### Example Usage
 ```
-
 connection.clients.get_core_client().get_teams(project_id, mine=None, top=None, skip=None, expand_identity=None)
 ```
 ### QueueCreateProject
@@ -989,7 +944,6 @@ Queues a project to be deleted. Use the [GetOperation](../../operations/operatio
 :class:<OperationReference> <azure.devops.v5_1.core.models.OperationReference>
 #### Example Usage
 ```
-
 connection.clients.get_core_client().queue_delete_project(project_id)
 ```
 ### UpdateProject
@@ -1115,7 +1069,6 @@ Add reviewers to a pull request.
 [IdentityRefWithVote]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().create_pull_request_reviewers(reviewers, repository_id, pull_request_id, project=None)
 ```
 ### CreatePush
@@ -1185,7 +1138,6 @@ Delete a comment associated with a specific thread in a pull request.
 :class:<GitPullRequestCommentThread> <azure.devops.v5_1.git.models.GitPullRequestCommentThread>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().delete_comment(repository_id, pull_request_id, thread_id, comment_id, project=None)
 ```
 ### DeletePullRequestReviewer
@@ -1202,7 +1154,6 @@ Remove a reviewer from a pull request.
 :class:<GitPullRequestCommentThread> <azure.devops.v5_1.git.models.GitPullRequestCommentThread>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().delete_pull_request_reviewer(repository_id, pull_request_id, reviewer_id, project=None)
 ```
 ### DeleteRepository
@@ -1217,7 +1168,6 @@ Delete a git repository
 :class:<GitPullRequestCommentThread> <azure.devops.v5_1.git.models.GitPullRequestCommentThread>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().delete_repository(repository_id, project=None)
 ```
 ### GetBlob
@@ -1236,7 +1186,6 @@ Get a single blob.
 :class:<GitBlobRef> <azure.devops.v5_1.git.models.GitBlobRef>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_blob(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None)
 ```
 ### GetBlobContent
@@ -1255,7 +1204,6 @@ Get a single blob.
 object
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_blob_content(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None, **kwargs)
 ```
 ### GetBlobZip
@@ -1274,7 +1222,6 @@ Get a single blob.
 object
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_blob_zip(repository_id, sha1, project=None, download=None, file_name=None, resolve_lfs=None, **kwargs)
 ```
 ### GetBlobsZip
@@ -1291,7 +1238,6 @@ Gets one or more blobs in a zip file download.
 object
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_blobs_zip(blob_ids, repository_id, project=None, filename=None, **kwargs)
 ```
 ### GetBranch
@@ -1344,7 +1290,6 @@ Retrieve changes for a particular commit.
 :class:<GitCommitChanges> <azure.devops.v5_1.git.models.GitCommitChanges>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_changes(commit_id, repository_id, project=None, top=None, skip=None)
 ```
 ### GetComment
@@ -1362,7 +1307,6 @@ Retrieve a comment associated with a specific thread in a pull request.
 :class:<Comment> <azure.devops.v5_1.git.models.Comment>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_comment(repository_id, pull_request_id, thread_id, comment_id, project=None)
 ```
 ### GetComments
@@ -1379,7 +1323,6 @@ Retrieve all comments associated with a specific thread in a pull request.
 [Comment]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_comments(repository_id, pull_request_id, thread_id, project=None)
 ```
 ### GetCommit
@@ -1396,7 +1339,6 @@ Retrieve a particular commit.
 :class:<GitCommit> <azure.devops.v5_1.git.models.GitCommit>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_commit(commit_id, repository_id, project=None, change_count=None)
 ```
 ### GetCommitDiffs
@@ -1618,7 +1560,6 @@ Retrieve a pull request.
 :class:<GitPullRequest> <azure.devops.v5_1.git.models.GitPullRequest>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request(repository_id, pull_request_id, project=None, max_comment_length=None, skip=None, top=None, include_commits=None, include_work_item_refs=None)
 ```
 ### GetPullRequestById
@@ -1633,7 +1574,6 @@ Retrieve a pull request.
 :class:<GitPullRequest> <azure.devops.v5_1.git.models.GitPullRequest>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_by_id(pull_request_id, project=None)
 ```
 ### GetPullRequestCommits
@@ -1651,7 +1591,6 @@ Get the commits for the specified pull request.
 :class:<GetPullRequestCommitsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_commits(repository_id, pull_request_id, project=None, top=None, continuation_token=None)
 ```
 ### GetPullRequestIteration
@@ -1668,7 +1607,6 @@ Get the specified iteration for a pull request.
 :class:<GitPullRequestIteration> <azure.devops.v5_1.git.models.GitPullRequestIteration>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_iteration(repository_id, pull_request_id, iteration_id, project=None)
 ```
 ### GetPullRequestIterationChanges
@@ -1688,7 +1626,6 @@ Retrieve the changes made in a pull request between two iterations.
 :class:<GitPullRequestIterationChanges> <azure.devops.v5_1.git.models.GitPullRequestIterationChanges>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_iteration_changes(repository_id, pull_request_id, iteration_id, project=None, top=None, skip=None, compare_to=None)
 ```
 ### GetPullRequestIterationCommits
@@ -1707,7 +1644,6 @@ Get the commits for the specified iteration of a pull request.
 [GitCommitRef]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_iteration_commits(repository_id, pull_request_id, iteration_id, project=None, top=None, skip=None)
 ```
 ### GetPullRequestIterations
@@ -1724,7 +1660,6 @@ Get the list of iterations for the specified pull request.
 [GitPullRequestIteration]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_iterations(repository_id, pull_request_id, project=None, include_commits=None)
 ```
 ### GetPullRequestQuery
@@ -1758,7 +1693,6 @@ Retrieve information about a particular reviewer on a pull request
 :class:<IdentityRefWithVote> <azure.devops.v5_1.git.models.IdentityRefWithVote>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_reviewer(repository_id, pull_request_id, reviewer_id, project=None)
 ```
 ### GetPullRequestReviewers
@@ -1774,7 +1708,6 @@ Retrieve the reviewers for a pull request
 [IdentityRefWithVote]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_reviewers(repository_id, pull_request_id, project=None)
 ```
 ### GetPullRequestThread
@@ -1793,7 +1726,6 @@ Retrieve a thread in a pull request.
 :class:<GitPullRequestCommentThread> <azure.devops.v5_1.git.models.GitPullRequestCommentThread>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_thread(repository_id, pull_request_id, thread_id, project=None, iteration=None, base_iteration=None)
 ```
 ### GetPullRequestWorkItemRefs
@@ -1809,7 +1741,6 @@ Retrieve a list of work items associated with a pull request.
 [ResourceRef]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_pull_request_work_item_refs(repository_id, pull_request_id, project=None)
 ```
 ### GetPullRequests
@@ -1866,7 +1797,6 @@ Retrieves a particular push.
 :class:<GitPush> <azure.devops.v5_1.git.models.GitPush>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_push(repository_id, push_id, project=None, include_commits=None, include_ref_updates=None)
 ```
 ### GetPushCommits
@@ -1885,7 +1815,6 @@ Retrieve a list of commits associated with a particular push.
 [GitCommitRef]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_push_commits(repository_id, push_id, project=None, top=None, skip=None, include_links=None)
 ```
 ### GetPushes
@@ -1928,7 +1857,6 @@ Queries the provided repository for its refs and returns them.
 :class:<GetRefsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_refs(repository_id, project=None, filter=None, include_links=None, include_statuses=None, include_my_branches=None, latest_statuses_only=None, peel_tags=None, filter_contains=None, top=None, continuation_token=None)
 ```
 ### GetRepositories
@@ -1945,7 +1873,6 @@ Retrieve git repositories.
 [GitRepository]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_repositories(project=None, include_links=None, include_all_urls=None, include_hidden=None)
 ```
 ### GetRepository
@@ -1960,7 +1887,6 @@ Retrieve a git repository.
 :class:<GitRepository> <azure.devops.v5_1.git.models.GitRepository>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_repository(repository_id, project=None)
 ```
 ### GetRepositoryWithParent
@@ -1976,7 +1902,6 @@ Retrieve a git repository.
 :class:<GitRepository> <azure.devops.v5_1.git.models.GitRepository>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_repository_with_parent(repository_id, include_parent, project=None)
 ```
 ### GetStatuses
@@ -1995,7 +1920,6 @@ Get statuses associated with the Git commit.
 [GitStatus]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_statuses(commit_id, repository_id, project=None, top=None, skip=None, latest_only=None)
 ```
 ### GetThreads
@@ -2013,7 +1937,6 @@ Retrieve all threads in a pull request.
 [GitPullRequestCommentThread]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_threads(repository_id, pull_request_id, project=None, iteration=None, base_iteration=None)
 ```
 ### GetTree
@@ -2032,7 +1955,6 @@ The Tree endpoint returns the collection of objects underneath the specified tre
 :class:<GitTreeRef> <azure.devops.v5_1.git.models.GitTreeRef>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_tree(repository_id, sha1, project=None, project_id=None, recursive=None, file_name=None)
 ```
 ### GetTreeZip
@@ -2051,7 +1973,6 @@ The Tree endpoint returns the collection of objects underneath the specified tre
 object
 #### Example Usage
 ```
-
 connection.clients.get_git_client().get_tree_zip(repository_id, sha1, project=None, project_id=None, recursive=None, file_name=None, **kwargs)
 ```
 ### UpdateComment
@@ -2106,7 +2027,6 @@ Reset the votes of multiple reviewers on a pull request.  NOTE: This endpoint on
 :class:<GitPullRequest> <azure.devops.v5_1.git.models.GitPullRequest>
 #### Example Usage
 ```
-
 connection.clients.get_git_client().update_pull_request_reviewers(patch_votes, repository_id, pull_request_id, project=None)
 ```
 ### UpdateRef
@@ -2142,7 +2062,6 @@ Creating, updating, or deleting refs(branches).
 [GitRefUpdateResult]
 #### Example Usage
 ```
-
 connection.clients.get_git_client().update_refs(ref_updates, repository_id, project=None, project_id=None)
 ```
 ### UpdateRepository
@@ -2224,7 +2143,6 @@ connection.clients.get_identity_client().create_identity(framework_identity_info
 :class:<Identity> <azure.devops.v5_1.identity.models.Identity>
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().delete_group(group_id)
 ```
 ### GetIdentityChanges
@@ -2242,7 +2160,6 @@ connection.clients.get_identity_client().delete_group(group_id)
 :class:<ChangedIdentities> <azure.devops.v5_1.identity.models.ChangedIdentities>
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().get_identity_changes(identity_sequence_id, group_sequence_id, organization_identity_sequence_id=None, page_size=None, scope_id=None)
 ```
 ### GetMaxSequenceId
@@ -2255,7 +2172,6 @@ Read the max sequence id of all the identities.
 long
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().get_max_sequence_id()
 ```
 ### GetSelf
@@ -2268,7 +2184,6 @@ Read identity of the home tenant request user.
 :class:<IdentitySelf> <azure.devops.v5_1.identity.models.IdentitySelf>
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().get_self()
 ```
 ### GetUserIdentityIdsByDomainId
@@ -2282,7 +2197,6 @@ connection.clients.get_identity_client().get_self()
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().get_user_identity_ids_by_domain_id(domain_id)
 ```
 ### ListGroups
@@ -2299,7 +2213,6 @@ connection.clients.get_identity_client().get_user_identity_ids_by_domain_id(doma
 [Identity]
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().list_groups(scope_ids=None, recurse=None, deleted=None, properties=None)
 ```
 ### ReadIdentities
@@ -2322,7 +2235,6 @@ connection.clients.get_identity_client().list_groups(scope_ids=None, recurse=Non
 [Identity]
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().read_identities(descriptors=None, identity_ids=None, subject_descriptors=None, social_descriptors=None, search_filter=None, filter_value=None, query_membership=None, properties=None, include_restricted_visibility=None, options=None)
 ```
 ### ReadIdentitiesByScope
@@ -2338,7 +2250,6 @@ connection.clients.get_identity_client().read_identities(descriptors=None, ident
 [Identity]
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().read_identities_by_scope(scope_id, query_membership=None, properties=None)
 ```
 ### ReadIdentity
@@ -2354,7 +2265,6 @@ connection.clients.get_identity_client().read_identities_by_scope(scope_id, quer
 :class:<Identity> <azure.devops.v5_1.identity.models.Identity>
 #### Example Usage
 ```
-
 connection.clients.get_identity_client().read_identity(identity_id, query_membership=None, properties=None)
 ```
 ### UpdateIdentities
@@ -2416,7 +2326,6 @@ Delete a subscription.
 :class:<NotificationSubscription> <azure.devops.v5_1.notification.models.NotificationSubscription>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().delete_subscription(subscription_id)
 ```
 ### GetEventType
@@ -2430,7 +2339,6 @@ Get a specific event type.
 :class:<NotificationEventType> <azure.devops.v5_1.notification.models.NotificationEventType>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_event_type(event_type)
 ```
 ### GetSettings
@@ -2443,7 +2351,6 @@ connection.clients.get_notification_client().get_event_type(event_type)
 :class:<NotificationAdminSettings> <azure.devops.v5_1.notification.models.NotificationAdminSettings>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_settings()
 ```
 ### GetSubscriber
@@ -2457,7 +2364,6 @@ Get delivery preferences of a notifications subscriber.
 :class:<NotificationSubscriber> <azure.devops.v5_1.notification.models.NotificationSubscriber>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_subscriber(subscriber_id)
 ```
 ### GetSubscription
@@ -2472,7 +2378,6 @@ Get a notification subscription by its ID.
 :class:<NotificationSubscription> <azure.devops.v5_1.notification.models.NotificationSubscription>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_subscription(subscription_id, query_flags=None)
 ```
 ### GetSubscriptionDiagnostics
@@ -2486,7 +2391,6 @@ Get the diagnostics settings for a subscription.
 :class:<SubscriptionDiagnostics> <azure.devops.v5_1.notification.models.SubscriptionDiagnostics>
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_subscription_diagnostics(subscription_id)
 ```
 ### GetSubscriptionTemplates
@@ -2499,7 +2403,6 @@ Get available subscription templates.
 [NotificationSubscriptionTemplate]
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().get_subscription_templates()
 ```
 ### ListEventTypes
@@ -2513,7 +2416,6 @@ List available event types for this service. Optionally filter by only event typ
 [NotificationEventType]
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().list_event_types(publisher_id=None)
 ```
 ### ListLogs
@@ -2530,7 +2432,6 @@ Get a list of diagnostic logs for this service.
 [INotificationDiagnosticLog]
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().list_logs(source, entry_id=None, start_time=None, end_time=None)
 ```
 ### ListSubscriptions
@@ -2546,7 +2447,6 @@ Get a list of notification subscriptions, either by subscription IDs or by all s
 [NotificationSubscription]
 #### Example Usage
 ```
-
 connection.clients.get_notification_client().list_subscriptions(target_id=None, ids=None, query_flags=None)
 ```
 ### QuerySubscriptions
@@ -2658,7 +2558,6 @@ Gets an operation from the the operationId using the given pluginId.
 :class:<Operation> <azure.devops.v5_1.operations.models.Operation>
 #### Example Usage
 ```
-
 connection.clients.get_operations_client().get_operation(operation_id, plugin_id=None)
 ```
 ## Get Policy Client
@@ -2692,7 +2591,6 @@ Delete a policy configuration by its ID.
 :class:<PolicyConfiguration> <azure.devops.v5_1.policy.models.PolicyConfiguration>
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().delete_policy_configuration(project, configuration_id)
 ```
 ### GetPolicyConfiguration
@@ -2707,7 +2605,6 @@ Get a policy configuration by its ID.
 :class:<PolicyConfiguration> <azure.devops.v5_1.policy.models.PolicyConfiguration>
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_configuration(project, configuration_id)
 ```
 ### GetPolicyConfigurationRevision
@@ -2723,7 +2620,6 @@ Retrieve a specific revision of a given policy by ID.
 :class:<PolicyConfiguration> <azure.devops.v5_1.policy.models.PolicyConfiguration>
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_configuration_revision(project, configuration_id, revision_id)
 ```
 ### GetPolicyConfigurationRevisions
@@ -2740,7 +2636,6 @@ Retrieve all revisions for a given policy.
 [PolicyConfiguration]
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_configuration_revisions(project, configuration_id, top=None, skip=None)
 ```
 ### GetPolicyConfigurations
@@ -2758,7 +2653,6 @@ Get a list of policy configurations in a project.
 :class:<GetPolicyConfigurationsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_configurations(project, scope=None, top=None, continuation_token=None, policy_type=None)
 ```
 ### GetPolicyType
@@ -2773,7 +2667,6 @@ Retrieve a specific policy type by ID.
 :class:<PolicyType> <azure.devops.v5_1.policy.models.PolicyType>
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_type(project, type_id)
 ```
 ### GetPolicyTypes
@@ -2787,7 +2680,6 @@ Retrieve all available policy types.
 [PolicyType]
 #### Example Usage
 ```
-
 connection.clients.get_policy_client().get_policy_types(project)
 ```
 ### UpdatePolicyConfiguration
@@ -2855,7 +2747,6 @@ Delete a release definition.
 :class:<ReleaseDefinition> <azure.devops.v5_1.release.models.ReleaseDefinition>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().delete_release_definition(project, definition_id, comment=None, force_delete=None)
 ```
 ### GetApprovals
@@ -2877,7 +2768,6 @@ Get a list of approvals
 :class:<GetApprovalsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_approvals(project, assigned_to_filter=None, status_filter=None, release_ids_filter=None, type_filter=None, top=None, continuation_token=None, query_order=None, include_my_group_approvals=None)
 ```
 ### GetDeployments
@@ -2906,7 +2796,6 @@ connection.clients.get_release_client().get_approvals(project, assigned_to_filte
 :class:<GetDeploymentsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_deployments(project, definition_id=None, definition_environment_id=None, created_by=None, min_modified_time=None, max_modified_time=None, deployment_status=None, operation_status=None, latest_attempts_only=None, query_order=None, top=None, continuation_token=None, created_for=None, min_started_time=None, max_started_time=None, source_branch=None)
 ```
 ### GetManualIntervention
@@ -2922,7 +2811,6 @@ Get manual intervention for a given release and manual intervention id.
 :class:<ManualIntervention> <azure.devops.v5_1.release.models.ManualIntervention>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_manual_intervention(project, release_id, manual_intervention_id)
 ```
 ### GetManualInterventions
@@ -2937,7 +2825,6 @@ List all manual interventions for a given release.
 [ManualIntervention]
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_manual_interventions(project, release_id)
 ```
 ### GetRelease
@@ -2956,7 +2843,6 @@ Get a Release
 :class:<Release> <azure.devops.v5_1.release.models.Release>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_release(project, release_id, approval_filters=None, property_filters=None, expand=None, top_gate_records=None)
 ```
 ### GetReleaseDefinition
@@ -2972,7 +2858,6 @@ Get a release definition.
 :class:<ReleaseDefinition> <azure.devops.v5_1.release.models.ReleaseDefinition>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_release_definition(project, definition_id, property_filters=None)
 ```
 ### GetReleaseDefinitions
@@ -3000,7 +2885,6 @@ Get a list of release definitions.
 :class:<GetReleaseDefinitionsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_release_definitions(project, search_text=None, expand=None, artifact_type=None, artifact_source_id=None, top=None, continuation_token=None, query_order=None, path=None, is_exact_name_match=None, tag_filter=None, property_filters=None, definition_id_filter=None, is_deleted=None, search_text_contains_folder_name=None)
 ```
 ### GetReleaseRevision
@@ -3016,7 +2900,6 @@ Get release for a given revision number.
 object
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_release_revision(project, release_id, definition_snapshot_revision, **kwargs)
 ```
 ### GetReleases
@@ -3051,7 +2934,6 @@ Get a list of releases
 :class:<GetReleasesResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_release_client().get_releases(project=None, definition_id=None, definition_environment_id=None, search_text=None, created_by=None, status_filter=None, environment_status_filter=None, min_created_time=None, max_created_time=None, query_order=None, top=None, continuation_token=None, expand=None, artifact_type_id=None, source_id=None, artifact_version_id=None, source_branch_filter=None, is_deleted=None, tag_filter=None, property_filters=None, release_id_filter=None, path=None)
 ```
 ### UpdateManualIntervention
@@ -3156,7 +3038,6 @@ Evaluates whether the caller has the specified permissions on the specified set 
 [bool]
 #### Example Usage
 ```
-
 connection.clients.get_security_client().has_permissions(security_namespace_id, permissions=None, tokens=None, always_allow_administrators=None, delimiter=None)
 ```
 ### HasPermissionsBatch
@@ -3189,7 +3070,6 @@ Return a list of access control lists for the specified security namespace and t
 [AccessControlList]
 #### Example Usage
 ```
-
 connection.clients.get_security_client().query_access_control_lists(security_namespace_id, token=None, descriptors=None, include_extended_info=None, recurse=None)
 ```
 ### QuerySecurityNamespaces
@@ -3204,7 +3084,6 @@ List all security namespaces or just the specified namespace.
 [SecurityNamespaceDescription]
 #### Example Usage
 ```
-
 connection.clients.get_security_client().query_security_namespaces(security_namespace_id=None, local_only=None)
 ```
 ### RemoveAccessControlEntries
@@ -3220,7 +3099,6 @@ Remove the specified ACEs from the ACL belonging to the specified token.
 bool
 #### Example Usage
 ```
-
 connection.clients.get_security_client().remove_access_control_entries(security_namespace_id, token=None, descriptors=None)
 ```
 ### RemoveAccessControlLists
@@ -3236,7 +3114,6 @@ Remove access control lists under the specfied security namespace.
 bool
 #### Example Usage
 ```
-
 connection.clients.get_security_client().remove_access_control_lists(security_namespace_id, tokens=None, recurse=None)
 ```
 ### RemovePermission
@@ -3253,7 +3130,6 @@ Removes the specified permissions on a security token for a user or group.
 :class:<AccessControlEntry> <azure.devops.v5_1.security.models.AccessControlEntry>
 #### Example Usage
 ```
-
 connection.clients.get_security_client().remove_permission(security_namespace_id, descriptor, permissions=None, token=None)
 ```
 ### SetAccessControlEntries
@@ -3347,7 +3223,6 @@ Delete a specific service hooks subscription.
 :class:<Notification> <azure.devops.v5_1.service_hooks.models.Notification>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().delete_subscription(subscription_id)
 ```
 ### GetConsumer
@@ -3362,7 +3237,6 @@ Get a specific consumer service. Optionally filter out consumer actions that do 
 :class:<Consumer> <azure.devops.v5_1.service_hooks.models.Consumer>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_consumer(consumer_id, publisher_id=None)
 ```
 ### GetConsumerAction
@@ -3378,7 +3252,6 @@ Get details about a specific consumer action.
 :class:<ConsumerAction> <azure.devops.v5_1.service_hooks.models.ConsumerAction>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_consumer_action(consumer_id, consumer_action_id, publisher_id=None)
 ```
 ### GetEventType
@@ -3393,7 +3266,6 @@ Get a specific event type.
 :class:<EventTypeDescriptor> <azure.devops.v5_1.service_hooks.models.EventTypeDescriptor>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_event_type(publisher_id, event_type_id)
 ```
 ### GetNotification
@@ -3408,7 +3280,6 @@ Get a specific notification for a subscription.
 :class:<Notification> <azure.devops.v5_1.service_hooks.models.Notification>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_notification(subscription_id, notification_id)
 ```
 ### GetNotifications
@@ -3425,7 +3296,6 @@ Get a list of notifications for a specific subscription. A notification includes
 [Notification]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_notifications(subscription_id, max_results=None, status=None, result=None)
 ```
 ### GetPublisher
@@ -3439,7 +3309,6 @@ Get a specific service hooks publisher.
 :class:<Publisher> <azure.devops.v5_1.service_hooks.models.Publisher>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_publisher(publisher_id)
 ```
 ### GetSubscription
@@ -3453,7 +3322,6 @@ Get a specific service hooks subscription.
 :class:<Subscription> <azure.devops.v5_1.service_hooks.models.Subscription>
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().get_subscription(subscription_id)
 ```
 ### ListConsumerActions
@@ -3468,7 +3336,6 @@ Get a list of consumer actions for a specific consumer.
 [ConsumerAction]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().list_consumer_actions(consumer_id, publisher_id=None)
 ```
 ### ListConsumers
@@ -3482,7 +3349,6 @@ Get a list of available service hook consumer services. Optionally filter by con
 [Consumer]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().list_consumers(publisher_id=None)
 ```
 ### ListEventTypes
@@ -3496,7 +3362,6 @@ Get the event types for a specific publisher.
 [EventTypeDescriptor]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().list_event_types(publisher_id)
 ```
 ### ListPublishers
@@ -3509,7 +3374,6 @@ Get a list of publishers.
 [Publisher]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().list_publishers()
 ```
 ### ListSubscriptions
@@ -3526,7 +3390,6 @@ Get a list of subscriptions.
 [Subscription]
 #### Example Usage
 ```
-
 connection.clients.get_service_hooks_client().list_subscriptions(publisher_id=None, event_type=None, consumer_id=None, consumer_action_id=None)
 ```
 ### QueryInputValues
@@ -3636,7 +3499,6 @@ Delete an agent.  You probably don't want to call this endpoint directly. Instea
 :class:<TaskAgentPool> <azure.devops.v5_1.task_agent.models.TaskAgentPool>
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().delete_agent(pool_id, agent_id)
 ```
 ### DeleteAgentPool
@@ -3650,7 +3512,6 @@ Delete an agent pool.
 :class:<TaskAgentPool> <azure.devops.v5_1.task_agent.models.TaskAgentPool>
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().delete_agent_pool(pool_id)
 ```
 ### GetAgent
@@ -3669,7 +3530,6 @@ Get information about an agent.
 :class:<TaskAgent> <azure.devops.v5_1.task_agent.models.TaskAgent>
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_agent(pool_id, agent_id, include_capabilities=None, include_assigned_request=None, include_last_completed_request=None, property_filters=None)
 ```
 ### GetAgentPool
@@ -3685,7 +3545,6 @@ Get information about an agent pool.
 :class:<TaskAgentPool> <azure.devops.v5_1.task_agent.models.TaskAgentPool>
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_agent_pool(pool_id, properties=None, action_filter=None)
 ```
 ### GetAgentPools
@@ -3702,7 +3561,6 @@ Get a list of agent pools.
 [TaskAgentPool]
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_agent_pools(pool_name=None, properties=None, pool_type=None, action_filter=None)
 ```
 ### GetAgentPoolsByIds
@@ -3717,7 +3575,6 @@ Get a list of agent pools.
 [TaskAgentPool]
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_agent_pools_by_ids(pool_ids, action_filter=None)
 ```
 ### GetAgents
@@ -3737,7 +3594,6 @@ Get a list of agents.
 [TaskAgent]
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_agents(pool_id, agent_name=None, include_capabilities=None, include_assigned_request=None, include_last_completed_request=None, property_filters=None, demands=None)
 ```
 ### GetYamlSchema
@@ -3750,7 +3606,6 @@ connection.clients.get_task_agent_client().get_agents(pool_id, agent_name=None, 
 object
 #### Example Usage
 ```
-
 connection.clients.get_task_agent_client().get_yaml_schema()
 ```
 ### ReplaceAgent
@@ -3820,7 +3675,6 @@ connection.clients.get_task_agent_client().update_agent_pool(pool, pool_id)
 :class:<TaskLog> <azure.devops.v5_1.task.models.TaskLog>
 #### Example Usage
 ```
-
 connection.clients.get_task_client().append_log_content(upload_stream, scope_identifier, hub_name, plan_id, log_id, **kwargs)
 ```
 ### CreateLog
@@ -3873,7 +3727,6 @@ connection.clients.get_task_client().create_timeline(timeline, scope_identifier,
 :class:<Timeline> <azure.devops.v5_1.task.models.Timeline>
 #### Example Usage
 ```
-
 connection.clients.get_task_client().delete_timeline(scope_identifier, hub_name, plan_id, timeline_id)
 ```
 ### GetLog
@@ -3892,7 +3745,6 @@ connection.clients.get_task_client().delete_timeline(scope_identifier, hub_name,
 [str]
 #### Example Usage
 ```
-
 connection.clients.get_task_client().get_log(scope_identifier, hub_name, plan_id, log_id, start_line=None, end_line=None)
 ```
 ### GetLogs
@@ -3908,7 +3760,6 @@ connection.clients.get_task_client().get_log(scope_identifier, hub_name, plan_id
 [TaskLog]
 #### Example Usage
 ```
-
 connection.clients.get_task_client().get_logs(scope_identifier, hub_name, plan_id)
 ```
 ### GetRecords
@@ -3926,7 +3777,6 @@ connection.clients.get_task_client().get_logs(scope_identifier, hub_name, plan_i
 [TimelineRecord]
 #### Example Usage
 ```
-
 connection.clients.get_task_client().get_records(scope_identifier, hub_name, plan_id, timeline_id, change_id=None)
 ```
 ### GetTimeline
@@ -3945,7 +3795,6 @@ connection.clients.get_task_client().get_records(scope_identifier, hub_name, pla
 :class:<Timeline> <azure.devops.v5_1.task.models.Timeline>
 #### Example Usage
 ```
-
 connection.clients.get_task_client().get_timeline(scope_identifier, hub_name, plan_id, timeline_id, change_id=None, include_records=None)
 ```
 ### GetTimelines
@@ -3961,7 +3810,6 @@ connection.clients.get_task_client().get_timeline(scope_identifier, hub_name, pl
 [Timeline]
 #### Example Usage
 ```
-
 connection.clients.get_task_client().get_timelines(scope_identifier, hub_name, plan_id)
 ```
 ### UpdateRecords
@@ -3999,7 +3847,6 @@ Add test cases to suite.
 [SuiteTestCase]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().add_test_cases_to_suite(project, plan_id, suite_id, test_case_ids)
 ```
 ### AddTestResultsToTestRun
@@ -4015,7 +3862,6 @@ Add test results to a test run.
 [TestCaseResult]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().add_test_results_to_test_run(results, project, run_id)
 ```
 ### CreateTestRun
@@ -4046,7 +3892,6 @@ Delete a test run by its ID.
 :class:<TestRun> <azure.devops.v5_1.test.models.TestRun>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().delete_test_run(project, run_id)
 ```
 ### GetActionResults
@@ -4064,7 +3909,6 @@ Gets the action results for an iteration in a test result.
 [TestActionResultModel]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_action_results(project, run_id, test_case_result_id, iteration_id, action_path=None)
 ```
 ### GetPoint
@@ -4082,7 +3926,6 @@ Get a test point.
 :class:<TestPoint> <azure.devops.v5_1.test.models.TestPoint>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_point(project, plan_id, suite_id, point_ids, wit_fields=None)
 ```
 ### GetPoints
@@ -4105,7 +3948,6 @@ Get a list of test points.
 [TestPoint]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_points(project, plan_id, suite_id, wit_fields=None, configuration_id=None, test_case_id=None, test_point_ids=None, include_point_details=None, skip=None, top=None)
 ```
 ### GetResultParameters
@@ -4123,7 +3965,6 @@ Get a list of parameterized results
 [TestResultParameterModel]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_result_parameters(project, run_id, test_case_result_id, iteration_id, param_name=None)
 ```
 ### GetTestCaseById
@@ -4140,7 +3981,6 @@ Get a specific test case in a test suite with test case id.
 :class:<SuiteTestCase> <azure.devops.v5_1.test.models.SuiteTestCase>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_case_by_id(project, plan_id, suite_id, test_case_ids)
 ```
 ### GetTestCases
@@ -4156,7 +3996,6 @@ Get all test cases in a suite.
 [SuiteTestCase]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_cases(project, plan_id, suite_id)
 ```
 ### GetTestIteration
@@ -4174,7 +4013,6 @@ Get iteration for a result
 :class:<TestIterationDetailsModel> <azure.devops.v5_1.test.models.TestIterationDetailsModel>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_iteration(project, run_id, test_case_result_id, iteration_id, include_action_results=None)
 ```
 ### GetTestIterations
@@ -4191,7 +4029,6 @@ Get iterations for a result
 [TestIterationDetailsModel]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_iterations(project, run_id, test_case_result_id, include_action_results=None)
 ```
 ### GetTestResultById
@@ -4208,7 +4045,6 @@ Get a test result for a test run.
 :class:<TestCaseResult> <azure.devops.v5_1.test.models.TestCaseResult>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_result_by_id(project, run_id, test_case_result_id, details_to_include=None)
 ```
 ### GetTestResults
@@ -4227,7 +4063,6 @@ Get test results for a test run.
 [TestCaseResult]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_results(project, run_id, details_to_include=None, skip=None, top=None, outcomes=None)
 ```
 ### GetTestRunById
@@ -4243,7 +4078,6 @@ Get a test run by its ID.
 :class:<TestRun> <azure.devops.v5_1.test.models.TestRun>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_run_by_id(project, run_id, include_details=None)
 ```
 ### GetTestRunStatistics
@@ -4258,7 +4092,6 @@ Get test run statistics , used when we want to get summary of a run by outcome.
 :class:<TestRunStatistic> <azure.devops.v5_1.test.models.TestRunStatistic>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_run_statistics(project, run_id)
 ```
 ### GetTestRuns
@@ -4280,7 +4113,6 @@ Get a list of test runs.
 [TestRun]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().get_test_runs(project, build_uri=None, owner=None, tmi_run_id=None, plan_id=None, include_run_details=None, automated=None, skip=None, top=None)
 ```
 ### QueryTestRuns
@@ -4310,7 +4142,6 @@ Query Test Runs based on filters. Mandatory fields are minLastUpdatedDate and ma
 :class:<QueryTestRunsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().query_test_runs(project, min_last_updated_date, max_last_updated_date, state=None, plan_ids=None, is_automated=None, publish_context=None, build_ids=None, build_def_ids=None, branch_name=None, release_ids=None, release_def_ids=None, release_env_ids=None, release_env_def_ids=None, run_title=None, top=None, continuation_token=None)
 ```
 ### RemoveTestCasesFromSuiteUrl
@@ -4327,7 +4158,6 @@ The test points associated with the test cases are removed from the test suite. 
 :class:<QueryTestRunsResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_test_client().remove_test_cases_from_suite_url(project, plan_id, suite_id, test_case_ids)
 ```
 ### UpdateSuiteTestCases
@@ -4381,7 +4211,6 @@ Update test results in a test run.
 [TestCaseResult]
 #### Example Usage
 ```
-
 connection.clients.get_test_client().update_test_results(results, project, run_id)
 ```
 ### UpdateTestRun
@@ -4414,7 +4243,6 @@ Find the list of all test suites in which a given test case is present. This is 
 [TestSuite]
 #### Example Usage
 ```
-
 connection.clients.get_test_plan_client().get_suites_by_test_case_id(test_case_id)
 ```
 ## Get Test Results Client
@@ -4431,7 +4259,6 @@ Get test run statistics , used when we want to get summary of a run by outcome.
 :class:<TestRunStatistic> <azure.devops.v5_1.test_results.models.TestRunStatistic>
 #### Example Usage
 ```
-
 connection.clients.get_test_results_client().get_test_run_statistics(project, run_id)
 ```
 ## Get Tfvc Client
@@ -4481,7 +4308,6 @@ Get a single branch hierarchy at the given path with parents or children as spec
 :class:<TfvcBranch> <azure.devops.v5_1.tfvc.models.TfvcBranch>
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_branch(path, project=None, include_parent=None, include_children=None)
 ```
 ### GetBranchRefs
@@ -4498,7 +4324,6 @@ Get branch hierarchies below the specified scopePath
 [TfvcBranchRef]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_branch_refs(scope_path, project=None, include_deleted=None, include_links=None)
 ```
 ### GetBranches
@@ -4516,7 +4341,6 @@ Get a collection of branch roots -- first-level children, branches with no paren
 [TfvcBranch]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_branches(project=None, include_parent=None, include_children=None, include_deleted=None, include_links=None)
 ```
 ### GetChangeset
@@ -4558,7 +4382,6 @@ Retrieve Tfvc changes for a given changeset.
 :class:<GetChangesetChangesResponseValue>
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_changeset_changes(id=None, skip=None, top=None, continuation_token=None)
 ```
 ### GetChangesetWorkItems
@@ -4572,7 +4395,6 @@ Retrieves the work items associated with a particular changeset.
 [AssociatedWorkItem]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_changeset_work_items(id=None)
 ```
 ### GetChangesets
@@ -4764,7 +4586,6 @@ Get items under a label.
 [TfvcItem]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_label_items(label_id, top=None, skip=None)
 ```
 ### GetLabels
@@ -4814,7 +4635,6 @@ Get changes included in a shelveset.
 [TfvcChange]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_shelveset_changes(shelveset_id, top=None, skip=None)
 ```
 ### GetShelvesetWorkItems
@@ -4828,7 +4648,6 @@ Get work items associated with a shelveset.
 [AssociatedWorkItem]
 #### Example Usage
 ```
-
 connection.clients.get_tfvc_client().get_shelveset_work_items(shelveset_id)
 ```
 ### GetShelvesets
@@ -4958,7 +4777,6 @@ Deletes the wiki corresponding to the wiki name or Id provided.
 :class:<WikiV2> <azure.devops.v5_1.wiki.models.WikiV2>
 #### Example Usage
 ```
-
 connection.clients.get_wiki_client().delete_wiki(wiki_identifier, project=None)
 ```
 ### GetAllWikis
@@ -4972,7 +4790,6 @@ Gets all wikis in a project or collection.
 [WikiV2]
 #### Example Usage
 ```
-
 connection.clients.get_wiki_client().get_all_wikis(project=None)
 ```
 ### GetPage
@@ -5047,7 +4864,6 @@ Gets the wiki corresponding to the wiki name or Id provided.
 :class:<WikiV2> <azure.devops.v5_1.wiki.models.WikiV2>
 #### Example Usage
 ```
-
 connection.clients.get_wiki_client().get_wiki(wiki_identifier, project=None)
 ```
 ### UpdateWiki
@@ -5097,7 +4913,6 @@ Delete the specified plan
 :class:<Plan> <azure.devops.v5_1.work.models.Plan>
 #### Example Usage
 ```
-
 connection.clients.get_work_client().delete_plan(project, id)
 ```
 ### DeleteTeamIteration
@@ -5303,7 +5118,6 @@ Get available board columns in a project
 [BoardSuggestedValue]
 #### Example Usage
 ```
-
 connection.clients.get_work_client().get_column_suggested_values(project=None)
 ```
 ### GetDeliveryTimelineData
@@ -5321,7 +5135,6 @@ Get Delivery View Data
 :class:<DeliveryViewData> <azure.devops.v5_1.work.models.DeliveryViewData>
 #### Example Usage
 ```
-
 connection.clients.get_work_client().get_delivery_timeline_data(project, id, revision=None, start_date=None, end_date=None)
 ```
 ### GetPlan
@@ -5336,7 +5149,6 @@ Get the information for the specified plan
 :class:<Plan> <azure.devops.v5_1.work.models.Plan>
 #### Example Usage
 ```
-
 connection.clients.get_work_client().get_plan(project, id)
 ```
 ### GetPlans
@@ -5350,7 +5162,6 @@ Get the information for all the plans configured for the given team
 [Plan]
 #### Example Usage
 ```
-
 connection.clients.get_work_client().get_plans(project)
 ```
 ### GetRowSuggestedValues
@@ -5364,7 +5175,6 @@ Get available board rows in a project
 [BoardSuggestedValue]
 #### Example Usage
 ```
-
 connection.clients.get_work_client().get_row_suggested_values(project=None)
 ```
 ### GetTeamDaysOff
@@ -5690,7 +5500,6 @@ Uploads an attachment.
 :class:<AttachmentReference> <azure.devops.v5_1.work_item_tracking.models.AttachmentReference>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().create_attachment(upload_stream, project=None, file_name=None, upload_type=None, area_path=None, **kwargs)
 ```
 ### CreateField
@@ -5780,7 +5589,6 @@ Delete an existing classification node.
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().delete_classification_node(project, structure_group, path=None, reclassify_id=None)
 ```
 ### DeleteField
@@ -5795,7 +5603,6 @@ Deletes the field.
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().delete_field(field_name_or_ref_name, project=None)
 ```
 ### DeleteQuery
@@ -5810,7 +5617,6 @@ Delete a query or a folder. This deletes any permission change on the deleted qu
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().delete_query(project, query)
 ```
 ### DeleteWorkItem
@@ -5826,7 +5632,6 @@ Deletes the specified work item and sends it to the Recycle Bin, so that it can 
 :class:<WorkItemDelete> <azure.devops.v5_1.work_item_tracking.models.WorkItemDelete>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().delete_work_item(id, project=None, destroy=None)
 ```
 ### DestroyWorkItem
@@ -5841,7 +5646,6 @@ Destroys the specified work item permanently from the Recycle Bin. This action c
 :class:<WorkItemDelete> <azure.devops.v5_1.work_item_tracking.models.WorkItemDelete>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().destroy_work_item(id, project=None)
 ```
 ### GetAttachmentContent
@@ -5858,7 +5662,6 @@ Downloads an attachment.
 object
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_attachment_content(id, project=None, file_name=None, download=None, **kwargs)
 ```
 ### GetAttachmentZip
@@ -5875,7 +5678,6 @@ Downloads an attachment.
 object
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_attachment_zip(id, project=None, file_name=None, download=None, **kwargs)
 ```
 ### GetClassificationNode
@@ -5892,7 +5694,6 @@ Gets the classification node for a given node path.
 :class:<WorkItemClassificationNode> <azure.devops.v5_1.work_item_tracking.models.WorkItemClassificationNode>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_classification_node(project, structure_group, path=None, depth=None)
 ```
 ### GetClassificationNodes
@@ -5909,7 +5710,6 @@ Gets root classification nodes or list of classification nodes for a given list 
 [WorkItemClassificationNode]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_classification_nodes(project, ids, depth=None, error_policy=None)
 ```
 ### GetDeletedWorkItem
@@ -5924,7 +5724,6 @@ Gets a deleted work item from Recycle Bin.
 :class:<WorkItemDelete> <azure.devops.v5_1.work_item_tracking.models.WorkItemDelete>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_deleted_work_item(id, project=None)
 ```
 ### GetDeletedWorkItemShallowReferences
@@ -5938,7 +5737,6 @@ Gets a list of the IDs and the URLs of the deleted the work items in the Recycle
 [WorkItemDeleteShallowReference]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_deleted_work_item_shallow_references(project=None)
 ```
 ### GetDeletedWorkItems
@@ -5953,7 +5751,6 @@ Gets the work items from the recycle bin, whose IDs have been specified in the p
 [WorkItemDeleteReference]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_deleted_work_items(ids, project=None)
 ```
 ### GetField
@@ -5968,7 +5765,6 @@ Gets information on a specific field.
 :class:<WorkItemField> <azure.devops.v5_1.work_item_tracking.models.WorkItemField>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_field(field_name_or_ref_name, project=None)
 ```
 ### GetFields
@@ -5983,7 +5779,6 @@ Returns information for all fields.
 [WorkItemField]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_fields(project=None, expand=None)
 ```
 ### GetQueries
@@ -6000,7 +5795,6 @@ Gets the root queries and their children
 [QueryHierarchyItem]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_queries(project, expand=None, depth=None, include_deleted=None)
 ```
 ### GetQueriesBatch
@@ -6034,7 +5828,6 @@ Retrieves an individual query and its children
 :class:<QueryHierarchyItem> <azure.devops.v5_1.work_item_tracking.models.QueryHierarchyItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_query(project, query, expand=None, depth=None, include_deleted=None)
 ```
 ### GetQueryResultCount
@@ -6066,7 +5859,6 @@ Gets the work item relation type definition.
 :class:<WorkItemRelationType> <azure.devops.v5_1.work_item_tracking.models.WorkItemRelationType>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_relation_type(relation)
 ```
 ### GetRelationTypes
@@ -6079,7 +5871,6 @@ Gets the work item relation types.
 [WorkItemRelationType]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_relation_types()
 ```
 ### GetReportingLinksByLinkType
@@ -6097,7 +5888,6 @@ Get a batch of work item links
 :class:<ReportingWorkItemLinksBatch> <azure.devops.v5_1.work_item_tracking.models.ReportingWorkItemLinksBatch>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_reporting_links_by_link_type(project=None, link_types=None, types=None, continuation_token=None, start_date_time=None)
 ```
 ### GetRevision
@@ -6114,7 +5904,6 @@ Returns a fully hydrated work item for the requested revision
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_revision(id, revision_number, project=None, expand=None)
 ```
 ### GetRevisions
@@ -6132,7 +5921,6 @@ Returns the list of fully hydrated work item revisions, paged.
 [WorkItem]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_revisions(id, project=None, top=None, skip=None, expand=None)
 ```
 ### GetRootNodes
@@ -6147,7 +5935,6 @@ Gets root classification nodes under the project.
 [WorkItemClassificationNode]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_root_nodes(project, depth=None)
 ```
 ### GetUpdate
@@ -6163,7 +5950,6 @@ Returns a single update for a work item
 :class:<WorkItemUpdate> <azure.devops.v5_1.work_item_tracking.models.WorkItemUpdate>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_update(id, update_number, project=None)
 ```
 ### GetUpdates
@@ -6180,7 +5966,6 @@ Returns a the deltas between work item revisions
 [WorkItemUpdate]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_updates(id, project=None, top=None, skip=None)
 ```
 ### GetWorkItem
@@ -6198,7 +5983,6 @@ Returns a single work item.
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item(id, project=None, fields=None, as_of=None, expand=None)
 ```
 ### GetWorkItemIconJson
@@ -6214,7 +5998,6 @@ Get a work item icon given the friendly name and icon color.
 :class:<WorkItemIcon> <azure.devops.v5_1.work_item_tracking.models.WorkItemIcon>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_icon_json(icon, color=None, v=None)
 ```
 ### GetWorkItemIconSvg
@@ -6230,7 +6013,6 @@ Get a work item icon given the friendly name and icon color.
 object
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_icon_svg(icon, color=None, v=None, **kwargs)
 ```
 ### GetWorkItemIconXaml
@@ -6246,7 +6028,6 @@ Get a work item icon given the friendly name and icon color.
 object
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_icon_xaml(icon, color=None, v=None, **kwargs)
 ```
 ### GetWorkItemIcons
@@ -6259,7 +6040,6 @@ Get a list of all work item icons.
 [WorkItemIcon]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_icons()
 ```
 ### GetWorkItemTemplate
@@ -6277,7 +6057,6 @@ Returns a single work item from a template.
 :class:<WorkItem> <azure.devops.v5_1.work_item_tracking.models.WorkItem>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_template(project, type, fields=None, as_of=None, expand=None)
 ```
 ### GetWorkItemType
@@ -6292,7 +6071,6 @@ Returns a work item type definition.
 :class:<WorkItemType> <azure.devops.v5_1.work_item_tracking.models.WorkItemType>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_type(project, type)
 ```
 ### GetWorkItemTypeCategories
@@ -6306,7 +6084,6 @@ Get all work item type categories.
 [WorkItemTypeCategory]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_type_categories(project)
 ```
 ### GetWorkItemTypeCategory
@@ -6321,7 +6098,6 @@ Get specific work item type category by name.
 :class:<WorkItemTypeCategory> <azure.devops.v5_1.work_item_tracking.models.WorkItemTypeCategory>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_type_category(project, category)
 ```
 ### GetWorkItemTypeFieldWithReferences
@@ -6338,7 +6114,6 @@ Get a field for a work item type with detailed references.
 :class:<WorkItemTypeFieldWithReferences> <azure.devops.v5_1.work_item_tracking.models.WorkItemTypeFieldWithReferences>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_type_field_with_references(project, type, field, expand=None)
 ```
 ### GetWorkItemTypeFieldsWithReferences
@@ -6354,7 +6129,6 @@ Get a list of fields for a work item type with detailed references.
 [WorkItemTypeFieldWithReferences]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_type_fields_with_references(project, type, expand=None)
 ```
 ### GetWorkItemTypes
@@ -6368,7 +6142,6 @@ Returns the list of work item types
 [WorkItemType]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_item_types(project)
 ```
 ### GetWorkItems
@@ -6387,7 +6160,6 @@ Returns a list of work items (Maximum 200)
 [WorkItem]
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().get_work_items(ids, project=None, fields=None, as_of=None, expand=None, error_policy=None)
 ```
 ### GetWorkItemsBatch
@@ -6465,7 +6237,6 @@ Get a batch of work item revisions with the option of including deleted items
 :class:<ReportingWorkItemRevisionsBatch> <azure.devops.v5_1.work_item_tracking.models.ReportingWorkItemRevisionsBatch>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().read_reporting_revisions_get(project=None, fields=None, types=None, continuation_token=None, start_date_time=None, include_identity_ref=None, include_deleted=None, include_tag_ref=None, include_latest_only=None, expand=None, include_discussion_changes_only=None, max_page_size=None)
 ```
 ### ReadReportingRevisionsPost
@@ -6519,7 +6290,6 @@ Searches all queries the user has access to in the current project
 :class:<QueryHierarchyItemsResult> <azure.devops.v5_1.work_item_tracking.models.QueryHierarchyItemsResult>
 #### Example Usage
 ```
-
 connection.clients.get_work_item_tracking_client().search_queries(project, filter, top=None, expand=None, include_deleted=None)
 ```
 ### UpdateClassificationNode

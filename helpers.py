@@ -169,9 +169,10 @@ def create_docs(obj, client_name, output_markdown=False):
             markdown += f'{attributes["return_type"]}\n'
             markdown += f'#### Example Usage\n'
             markdown += f'```\n'
-            for i in attributes['imports']:
-                markdown += f'{i}\n'
-            markdown += f'\n'
+            if len(attributes['imports']) > 0:
+                for i in attributes['imports']:
+                    markdown += f'{i}\n'
+                markdown += f'\n'
             markdown += f'{attributes["example_usage"]}\n'
             markdown += f'```\n'
 
