@@ -1,5 +1,6 @@
 from azure.devops.connection import Connection
 from msrest.authentication import BasicAuthentication
+import os
 import pandas as pd
 import datetime
 
@@ -42,8 +43,8 @@ def flatten_dict(nested_dict, separator='.', prefix=''):
 
 
 # Fill in with your personal access token and org URL
-personal_access_token = 'your_org'
-organization_url = 'your_pat'
+personal_access_token = os.environ.get('PAT')
+organization_url = os.environ.get('ORG')
 
 # Create a connection to the org
 credentials = BasicAuthentication('', personal_access_token)
