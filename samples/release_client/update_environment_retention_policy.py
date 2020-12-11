@@ -19,8 +19,18 @@ release_definitions = client.get_release_definitions(
     project="KpmgAdvisoryCloud")
 
 for release_definition in release_definitions.value:
-    if "sandbox-training-environment" in release_definition.name:
+    if "iac-" not in release_definition.name:
         # print(f'{release_definition.id}: {release_definition.name}')
+
+        deployments = client.get_deployments(
+            project="KpmgAdvisoryCloud",
+            definition_id=release_definition.id
+        )
+
+        try:
+            last_deployment = deployments.value[0].completed_on
+        except:
+            last_deployment = ""
 
         release_definition = client.get_release_definition(
             project="KpmgAdvisoryCloud",
@@ -74,7 +84,7 @@ for release_definition in release_definitions.value:
 
         if updates_required:
             release_definition_update = ReleaseDefinition(
-                description="This is a sandbox for training purposes",
+                description=release_definition.description,
                 name=release_definition.name,
                 id=release_definition.id,
                 environments=environments,
@@ -85,7 +95,7 @@ for release_definition in release_definitions.value:
                 variable_groups=release_definition.variable_groups,
                 variables=release_definition.variables,
                 properties=release_definition.properties,
-                comment="Automated update to pipeline from Release Bot.",
+                comment="Updated the retention policy to 365 days and number of releases to keep to 10.",
                 url=release_definition.url,
             )
 
@@ -96,10 +106,10 @@ for release_definition in release_definitions.value:
                 )
 
                 print(
-                    f'{release_definition.id}: {release_definition.name} has been updated.')
+                    f'{release_definition.id}/{release_definition.name}/{release_definition.modified_on}/{release_definition.created_by.display_name}/{release_definition.created_by.unique_name}/{release_definition.path}/{last_deployment}/Updated.')
             except Exception as e:
                 print(
-                    f'{release_definition.id}: {release_definition.name} could not be updated.  {e}')
+                    f'{release_definition.id}/{release_definition.name}/{release_definition.modified_on}/{release_definition.created_by.display_name}/{release_definition.created_by.unique_name}/{release_definition.path}/{last_deployment}/Not Updated/{e}')
         else:
             print(
-                f'{release_definition.id}: {release_definition.name} is already up-to-date.')
+                f'{release_definition.id}/{release_definition.name}/{release_definition.modified_on}/{release_definition.created_by.display_name}/{release_definition.created_by.unique_name}/{release_definition.path}/{last_deployment}/Up To Date')

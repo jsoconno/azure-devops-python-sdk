@@ -1,4 +1,5 @@
 from azure.devops.connection import Connection
+from azure.devops.v5_1.git.models import GitPullRequestSearchCriteria
 from msrest.authentication import BasicAuthentication
 import os
 import pandas as pd
@@ -50,38 +51,30 @@ organization_url = os.environ.get('ORG')
 credentials = BasicAuthentication('', personal_access_token)
 connection = Connection(base_url=organization_url, creds=credentials)
 
-client = connection.clients.get_release_client()
-deployments = client.get_deployments(
-    project="KpmgAdvisoryCloud")
+# Get a client
+git_client = connection.clients.get_git_client()
 
-data = []
+pr_search_criteria = GitPullRequestSearchCriteria(status='all')
+# repos = git_client.get_repositories()
+repos = git_client.get_repositories()
+pr_dicts = []
 
-# for release in releases:
-index = 0
-while deployments is not None:
-    for deployment in deployments.value:
-        r = to_dict_recursive(deployment)
+for repo in repos:
+    if repo.name:
+        try:
+            pull_requests = git_client.get_pull_requests(
+                repository_id=repo.id, search_criteria=pr_search_criteria, top=10000)
 
-        # Create this as a function later
-        for k, v in r.items():
-            if type(v) == list and len(v) > 0:
-                r[k] = r[k][0]
-            else:
-                pass
+            for pull_request in pull_requests:
+                pr_dict = to_dict_recursive(pull_request)
+                pr_dict = flatten_dict(pr_dict)
+                pr_dicts.append(pr_dict)
 
-        r = flatten_dict(r)
-        data.append(r)
-
-        print(index)
-        index += 1
-
-    if deployments.continuation_token is not None and deployments.continuation_token != "":
-        deployments = client.get_deployments(
-            project="KpmgAdvisoryCloud", continuation_token=deployments.continuation_token)
+        except Exception as e:
+            print(e)
     else:
-        deployments = None
+        pass
 
-
-df = pd.DataFrame.from_dict(data)
-print(df)
-df.to_csv('deployments.csv')
+df = pd.DataFrame.from_records(pr_dicts)
+df.dropna(axis='columns', how='all', inplace=True)
+df.to_csv('pull_requests.csv')
